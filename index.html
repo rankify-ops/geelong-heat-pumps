@@ -4,301 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Geelong Heat Pumps | Save Up To 80% On Hot Water Bills</title>
-<meta name="description" content="Geelong's trusted heat pump specialists. Government rebates save you up to $2,500. Price beat guarantee. Free quotes.">
+<meta name="description" content="Geelong's trusted heat pump specialists. Government rebates save you up to $2,500. Price beat guarantee. Free quotes within 2 hours.">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --orange:#e8590c;--orange-dark:#c2410c;--orange-light:#fff4ed;--orange-50:#fff8f3;--orange-glow:rgba(232,89,12,0.12);
-  --red:#dc2626;--red-light:#fef2f2;
-  --green:#15803d;--green-light:#dcfce7;
-  --amber:#d97706;
-  --g950:#09090b;--g900:#18181b;--g800:#27272a;--g700:#3f3f46;--g600:#52525b;--g500:#71717a;--g400:#a1a1aa;--g300:#d4d4d8;--g200:#e4e4e7;--g100:#f4f4f5;--g50:#fafafa;--white:#ffffff;
-  --shadow-xs:0 1px 2px rgba(0,0,0,0.04);--shadow-s:0 2px 8px rgba(0,0,0,0.05);--shadow:0 4px 16px rgba(0,0,0,0.06);--shadow-l:0 8px 32px rgba(0,0,0,0.08);--shadow-xl:0 16px 48px rgba(0,0,0,0.1);
-  --r:16px;--rs:12px;--rxs:8px;
-}
-html{scroll-behavior:smooth}
-body{font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--g800);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4,h5{color:var(--g900);letter-spacing:-0.025em;font-weight:700}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.ctr{max-width:1160px;margin:0 auto;padding:0 24px}
-
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;transition:all .3s ease;background:rgba(255,255,255,.06);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px) saturate(1.6);-webkit-backdrop-filter:blur(20px) saturate(1.6);border-bottom:1px solid var(--g200);padding:10px 0;box-shadow:var(--shadow-s)}
-.nav-in{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:8px}
-.logo img{height:36px;width:auto;transition:filter .3s}
-.nav .logo img{filter:brightness(0) invert(1)}
-.nav.scrolled .logo img{filter:none}
-.nav-l{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-l a{font-size:.87rem;font-weight:600;color:rgba(255,255,255,.92);transition:color .2s}
-.nav-l a:hover{color:#fff}
-.nav.scrolled .nav-l a{color:var(--g600)}
-.nav.scrolled .nav-l a:hover{color:var(--g900)}
-.nav-cta{background:var(--orange);color:#fff;padding:9px 22px;border-radius:50px;font-weight:700;font-size:.84rem;transition:all .2s;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(232,89,12,.35)}
-.nav-cta:hover{background:var(--orange-dark);transform:translateY(-1px)}
-.nav-ph{font-size:.87rem;font-weight:700;color:#fff;transition:color .2s}
-.nav.scrolled .nav-ph{color:var(--g700)}
-.mob-tog{display:none;background:none;border:none;cursor:pointer;padding:6px}
-.mob-tog span{display:block;width:20px;height:2px;background:#fff;margin:4px 0;border-radius:2px;transition:background .3s}
-.nav.scrolled .mob-tog span{background:var(--g700)}
-
-/* HERO */
-.hero{padding:0;position:relative;overflow:hidden;display:flex;align-items:center}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(9,9,11,.72) 0%,rgba(9,9,11,.45) 50%,rgba(9,9,11,.25) 100%)}
-.hero-inner{position:relative;z-index:1;padding:140px 0 80px;width:100%}
-.hero-content{max-width:600px}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);color:#fff;padding:6px 16px;border-radius:50px;font-size:.76rem;font-weight:600;margin-bottom:24px}
-.hero-tag .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;box-shadow:0 0 8px var(--green)}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-size:clamp(2.6rem,5vw,3.6rem);line-height:1.06;margin-bottom:18px;font-weight:800;color:#fff}
-.hero h1 .em{color:var(--orange)}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:32px;max-width:480px}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
-.btn-p{display:inline-flex;align-items:center;gap:6px;background:var(--orange);color:#fff;padding:15px 30px;border-radius:50px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;font-family:inherit;transition:all .25s}
-.btn-p:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,89,12,.35)}
-.btn-glass{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);color:#fff;padding:15px 30px;border-radius:50px;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit;transition:all .25s}
-.btn-glass:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3);transform:translateY(-1px)}
-.hero-ph{font-size:.88rem;color:rgba(255,255,255,.5)}
-.hero-ph a{color:#fff;font-weight:700}
-/* Frosted glass floating cards in hero */
-.hero-cards{display:flex;gap:10px;margin-top:36px}
-.hero-glass{flex:1;padding:14px 18px;background:rgba(255,255,255,.1);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border:1px solid rgba(255,255,255,.15);border-radius:var(--rs);display:flex;align-items:center;gap:10px;transition:all .3s;cursor:default}
-.hero-glass:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
-.hero-glass .hg-icon{font-size:1.3rem}
-.hero-glass .hg-val{font-size:1.15rem;font-weight:800;color:#fff;line-height:1}
-.hero-glass .hg-label{font-size:.65rem;color:rgba(255,255,255,.6);font-weight:500}
-.hero-guarantee{position:absolute;bottom:40px;right:40px;z-index:1}
-.hero-guarantee img{width:100px;height:auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,.3));opacity:.9;transition:all .3s}
-.hero-guarantee:hover img{opacity:1;transform:scale(1.05)}
-
-/* BENEFITS STRIP */
-.benefits{padding:0;position:relative;z-index:2;margin-top:-48px}
-.benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--white);border-radius:var(--r);overflow:hidden}
-.ben-item{padding:28px 24px;text-align:center;transition:all .3s;cursor:default}
-.ben-item:hover{background:var(--g50)}
-.ben-item:hover .ben-ico{transform:translateY(-3px)}
-.ben-ico{width:48px;height:48px;margin:0 auto 12px;background:var(--orange-light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;transition:transform .3s cubic-bezier(.4,0,.2,1)}
-.ben-item h4{font-size:.88rem;font-weight:700;margin-bottom:4px;color:var(--g900)}
-.ben-item p{font-size:.78rem;color:var(--g500);line-height:1.5}
-
-/* SECTIONS */
-.sec{padding:96px 0}
-.sec-tag{font-size:.72rem;text-transform:uppercase;letter-spacing:2.5px;color:var(--orange);font-weight:700;margin-bottom:10px}
-.sec-t{font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:800;line-height:1.15;margin-bottom:12px}
-.sec-sub{font-size:.97rem;color:var(--g500);line-height:1.7;max-width:520px}
-
-/* REBATE */
-.reb-sec{background:var(--white);border-bottom:1px solid var(--g200)}
-.reb-g{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:44px}
-.reb-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3}
-.reb-img img{width:100%;height:100%;object-fit:cover}
-.reb-card{background:var(--white);border:1px solid var(--g200);border-radius:var(--r);padding:32px;box-shadow:var(--shadow)}
-.reb-card .rc-h{font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:var(--g400);font-weight:700;margin-bottom:20px}
-.rc-r{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--g100)}
-.rc-r:last-of-type{border:none}
-.rc-r .l{font-size:.9rem;color:var(--g600)}
-.rc-r .v{font-weight:700;font-size:.95rem;color:var(--g900)}
-.rc-r .v.s{color:var(--green)}
-.rc-tot{margin-top:14px;padding:18px;background:var(--orange-light);border-radius:var(--rxs);display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(232,89,12,.1)}
-.rc-tot .l{font-weight:700;color:var(--g900)}
-.rc-tot .v{font-size:1.7rem;font-weight:800;color:var(--orange)}
-.rc-note{margin-top:18px;padding:14px 16px;background:var(--red-light);border-radius:var(--rxs);font-size:.8rem;color:var(--g700);line-height:1.6;border-left:3px solid var(--red)}
-.rc-note strong{color:var(--red)}
-
-/* PRODUCTS */
-.prod-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
-.pcard{background:var(--white);border:1.5px solid var(--g200);border-radius:var(--r);padding:0;transition:all .3s;position:relative;overflow:hidden}
-.pcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-l);border-color:var(--g300)}
-.pcard.feat{border-color:var(--orange);box-shadow:0 0 0 1px var(--orange),var(--shadow)}
-.pcard.feat .ptag{position:absolute;top:14px;right:14px;background:var(--orange);color:#fff;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:50px;z-index:2}
-.pcard-img{width:100%;height:180px;background:var(--g100);display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--g100)}
-.pcard-img img{max-height:160px;width:auto;object-fit:contain;mix-blend-mode:multiply}
-.pcard-body{padding:24px 22px 26px}
-.pcard .tier{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--g400);font-weight:700;margin-bottom:10px}
-.pcard h3{font-size:1.25rem;margin-bottom:6px}
-.pcard .desc{font-size:.86rem;color:var(--g500);line-height:1.6;margin-bottom:18px}
-.pspecs{border-top:1px solid var(--g100);padding-top:14px;display:flex;flex-direction:column;gap:7px}
-.psp{display:flex;justify-content:space-between;font-size:.78rem}
-.psp .k{color:var(--g400)}
-.psp .va{font-weight:600;color:var(--g700)}
-.pcta{display:block;text-align:center;margin-top:18px;padding:12px;background:var(--g900);color:#fff;border-radius:50px;font-weight:600;font-size:.86rem;transition:all .2s}
-.pcta:hover{background:var(--orange)}
-.pcard.feat .pcta{background:var(--orange)}
-.pcard.feat .pcta:hover{background:var(--orange-dark)}
-
-/* WHY */
-.why-sec{background:var(--g900);color:#fff;border-top:3px solid var(--orange)}
-.why-sec .sec-tag{color:var(--orange)}
-.why-sec .sec-t{color:#fff}
-.why-sec .sec-sub{color:var(--g400)}
-.why-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}
-.wcard{padding:28px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r);display:flex;gap:16px;transition:all .3s}
-.wcard:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
-.wico{width:44px;height:44px;min-width:44px;background:rgba(232,89,12,.12);border:1px solid rgba(232,89,12,.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.wcard h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:3px}
-.wcard p{font-size:.86rem;color:var(--g400);line-height:1.6}
-
-/* REVIEWS */
-.rev-sec{padding:96px 0;overflow:hidden}
-.rev-header{max-width:1160px;margin:0 auto;padding:0 24px}
-.gbadge-link{display:inline-block;margin-top:16px;margin-bottom:40px;transition:transform .25s cubic-bezier(.4,0,.2,1);cursor:pointer}
-.gbadge-link:hover{transform:translateY(-3px)}
-.gbadge-link:hover .gbadge{box-shadow:var(--shadow);border-color:var(--g300)}
-.gbadge{display:inline-flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--g200);border-radius:var(--rxs);padding:10px 18px;box-shadow:var(--shadow-xs);transition:all .25s}
-.gbadge .gs{color:#f59e0b;font-size:.85rem}
-.gbadge .gv{font-weight:800;font-size:.95rem}
-.gbadge .gc{color:var(--g500);font-size:.8rem}
-
-/* Marquee rows */
-.marquee-row{width:100%;overflow:hidden;padding:8px 0;position:relative}
-.marquee-row::before,.marquee-row::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-.marquee-row::before{left:0;background:linear-gradient(90deg,var(--white),transparent)}
-.marquee-row::after{right:0;background:linear-gradient(270deg,var(--white),transparent)}
-.marquee-track{display:flex;gap:16px;width:max-content}
-.marquee-row.right .marquee-track{animation:scrollRight 45s linear infinite}
-.marquee-row.left .marquee-track{animation:scrollLeft 50s linear infinite}
-.marquee-row:hover .marquee-track{animation-play-state:paused}
-@keyframes scrollRight{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes scrollLeft{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
-
-.rcard{width:360px;min-width:360px;background:var(--white);border:1.5px solid var(--g200);border-radius:var(--r);padding:24px;transition:all .35s cubic-bezier(.4,0,.2,1);flex-shrink:0;cursor:default}
-.rcard:hover{border-color:var(--orange);box-shadow:0 8px 30px rgba(232,89,12,.1);transform:translateY(-4px)}
-.rcard .rs{color:#f59e0b;margin-bottom:10px;font-size:.85rem;letter-spacing:2px;transition:transform .3s}
-.rcard:hover .rs{transform:scale(1.05)}
-.rcard .rt{font-size:.86rem;color:var(--g600);line-height:1.65;margin-bottom:14px}
-.rcard .ra{display:flex;align-items:center;gap:10px}
-.rcard .rav{width:34px;height:34px;border-radius:50%;background:var(--orange-light);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;color:var(--orange);transition:all .3s}
-.rcard:hover .rav{background:var(--orange);color:#fff;transform:scale(1.1)}
-.rcard .ran{font-weight:600;font-size:.84rem;color:var(--g800);transition:color .3s}
-.rcard:hover .ran{color:var(--orange)}
-.rcard .ral{font-size:.72rem;color:var(--g400)}
-
-/* URGENCY */
-.urg{max-width:1112px;margin:0 auto;padding:0 24px}
-.urg-in{padding:44px;background:linear-gradient(135deg,var(--orange-light),var(--red-light));border:1px solid rgba(220,38,38,.12);border-radius:var(--r);text-align:center}
-.urg-in h3{font-size:1.35rem;margin-bottom:10px}
-.urg-in .em{color:var(--red)}
-.urg-in p{color:var(--g600);max-width:600px;margin:0 auto 22px;line-height:1.6;font-size:.93rem}
-
-/* FORM */
-.form-sec{background:var(--g50);border-top:1px solid var(--g200)}
-.form-g{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
-.form-info .sec-sub{margin-bottom:28px}
-.form-img{border-radius:var(--r);overflow:hidden;margin-top:28px;aspect-ratio:16/10}
-.form-img img{width:100%;height:100%;object-fit:cover}
-.fperks{display:flex;flex-direction:column;gap:12px}
-.fperk{display:flex;align-items:center;gap:11px;font-size:.87rem;color:var(--g600)}
-.fpd{width:22px;height:22px;min-width:22px;background:var(--green-light);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:.65rem;font-weight:800}
-.qform{background:var(--white);border:1.5px solid var(--g200);border-radius:var(--r);padding:32px;box-shadow:var(--shadow-l)}
-.fsteps{display:flex;gap:5px;margin-bottom:24px}
-.fstep{flex:1;height:3px;background:var(--g100);border-radius:3px;transition:background .4s}
-.fstep.active{background:var(--orange)}
-.fstep.done{background:var(--green)}
-.fslide{display:none}
-.fslide.active{display:block;animation:su .3s ease}
-@keyframes su{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.fslide h3{font-size:1.1rem;margin-bottom:3px}
-.fslide .fsub{font-size:.8rem;color:var(--g400);margin-bottom:18px}
-.og{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.ob{padding:15px 12px;background:var(--white);border:1.5px solid var(--g200);border-radius:var(--rxs);cursor:pointer;transition:all .2s;text-align:center;font-family:inherit;color:var(--g700)}
-.ob:hover{border-color:var(--g300);background:var(--g50)}
-.ob.sel{border-color:var(--orange);background:var(--orange-light);color:var(--orange)}
-.oico{font-size:1.3rem;margin-bottom:3px}
-.olbl{font-size:.8rem;font-weight:600}
-.finp{width:100%;padding:13px 15px;background:var(--white);border:1.5px solid var(--g200);border-radius:var(--rxs);font-family:inherit;font-size:.9rem;color:var(--g800);outline:none;transition:all .2s;margin-bottom:8px}
-.finp:focus{border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-glow)}
-.finp::placeholder{color:var(--g400)}
-.fnav{display:flex;gap:8px;margin-top:18px}
-.fb{padding:12px 20px;background:var(--white);border:1.5px solid var(--g200);border-radius:50px;cursor:pointer;font-family:inherit;font-weight:600;font-size:.86rem;color:var(--g600);transition:all .2s}
-.fb:hover{background:var(--g50)}
-.fn{flex:1;padding:12px 20px;background:var(--orange);border:none;border-radius:50px;color:#fff;cursor:pointer;font-family:inherit;font-weight:700;font-size:.9rem;transition:all .25s}
-.fn:hover{background:var(--orange-dark)}
-
-/* AREAS */
-.atags{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
-.atag{padding:7px 16px;background:var(--white);border:1px solid var(--g200);border-radius:50px;font-size:.76rem;font-weight:500;color:var(--g500);transition:all .2s}
-.atag:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-light)}
-
-/* FOOTER */
-.foot{background:var(--g900);color:var(--g400);padding:56px 0 24px}
-.foot-g{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
-.foot-brand .logo{margin-bottom:10px}
-.foot-brand .logo img{height:30px;filter:brightness(0) invert(1)}
-.foot-brand p{font-size:.84rem;line-height:1.6;max-width:270px}
-.foot h4{font-size:.78rem;font-weight:700;color:var(--g300);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
-.foot-l{list-style:none;display:flex;flex-direction:column;gap:9px}
-.foot-l a{font-size:.84rem;transition:color .2s}
-.foot-l a:hover{color:#fff}
-.foot-b{padding-top:20px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;font-size:.76rem}
-.foot-b a{color:var(--orange)}
-
-/* STICKY - floating frosted pill */
-.sticky{position:fixed;bottom:14px;left:14px;right:14px;z-index:99;background:rgba(255,255,255,.55);backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);border:1px solid rgba(255,255,255,.6);padding:10px;display:none;gap:10px;box-shadow:0 8px 32px rgba(232,89,12,.18),0 2px 8px rgba(0,0,0,.08);border-radius:50px}
-.sticky a{flex:1 1 0;text-align:center;padding:13px 16px;border-radius:50px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s}
-.sticky .sc{background:rgba(255,255,255,.85);border:1px solid rgba(232,89,12,.2);color:var(--orange-dark)}
-.sticky .sc:active{background:#fff}
-.sticky .sq{background:var(--orange);color:#fff;box-shadow:0 4px 14px rgba(232,89,12,.4)}
-.sticky .sq:active{background:var(--orange-dark)}
-
-/* FADE */
-.fade{opacity:0;transform:translateY(18px);transition:all .55s cubic-bezier(.16,1,.3,1)}
-.fade.vis{opacity:1;transform:translateY(0)}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .nav-l,.nav-ph{display:none}.mob-tog{display:block}
-  .hero-g,.reb-g,.form-g{grid-template-columns:1fr}
-  .hero-inner{padding:120px 0 70px}
-  .hero-cards{flex-wrap:wrap}
-  .hero-glass{flex:1 1 calc(50% - 5px);min-width:calc(50% - 5px)}
-  .hero-guarantee{bottom:20px;right:20px}
-  .hero-guarantee img{width:70px}
-  .benefits{margin-top:-32px}
-  .benefits-grid{grid-template-columns:1fr 1fr}
-  .ben-item{border-bottom:1px solid var(--g100)}
-  .ben-item:nth-child(2n){border-right:none}
-  .prod-g{grid-template-columns:1fr}
-  .rcard{width:300px;min-width:300px}
-  .why-g{grid-template-columns:1fr}
-  .foot-g{grid-template-columns:1fr 1fr}
-  .sticky{display:flex}body{padding-bottom:60px}
-  .hero-vis{order:-1}
-  .urg-in{padding:28px 20px}
-  .form-img{display:none}
-}
-@media(max-width:480px){.foot-g{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <div class="nav-in">
-    <a href="#" class="logo"><img src="https://www.geelongheatpumps.com.au/files/logo.svg" alt="Geelong Heat Pumps"></a>
+    <a href="index.html" class="logo"><img src="https://www.geelongheatpumps.com.au/files/logo.svg" alt="Geelong Heat Pumps"></a>
     <ul class="nav-l">
-      <li><a href="#products">Heat Pumps</a></li>
-      <li><a href="#rebates">Rebates</a></li>
-      <li><a href="#why">Why Us</a></li>
-      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="heat-pumps.html">Heat Pumps</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="rebates.html">Rebates</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact-us.html">Contact</a></li>
     </ul>
-    <a href="tel:0411375484" class="nav-ph">📞 0411 375 484</a>
-    <a href="#quote" class="nav-cta">Request a Quote</a>
+    <div class="nav-r">
+      <a href="tel:0411375484" class="nav-ph">📞 0411 375 484</a>
+      <a href="contact-us.html" class="nav-cta">Free Quote</a>
+    </div>
     <button class="mob-tog" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
+<aside class="mdrawer" id="mdrawer">
+  <ul class="mdrawer-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="heat-pumps.html">Heat Pumps</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="rebates.html">Rebates</a></li>
+    <li><a href="pool-heat-pumps.html">Pool Heat Pumps</a></li>
+    <li><a href="heating-cooling.html">Heating &amp; Cooling</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+  <div class="mdrawer-cta">
+    <a href="tel:0411375484" class="mc-call">📞 0411 375 484</a>
+    <a href="contact-us.html" class="mc-quote">Get a Free Quote →</a>
+  </div>
+</aside>
+
 <section class="hero">
-  <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1600&q=80" alt="Modern luxury shower with steam">
-  </div>
-  <div class="hero-guarantee">
-    <img src="https://www.geelongheatpumps.com.au/thumbnaillarge/guarantee.png" alt="Price Beat Guarantee">
-  </div>
+  <div class="hero-bg"><img src="images/install-reclaim-hero.jpg" alt="Reclaim Energy heat pump installation by Geelong Heat Pumps"></div>
+  <div class="hero-guarantee"><img src="https://www.geelongheatpumps.com.au/thumbnaillarge/guarantee.png" alt="Price Beat Guarantee"></div>
   <div class="hero-inner">
     <div class="ctr">
       <div class="hero-content">
@@ -306,32 +57,16 @@ img{max-width:100%;display:block}
         <h1>Cut your hot water<br>bills by up to <span class="em">80%</span></h1>
         <p class="hero-sub">Geelong's trusted heat pump specialists. You could save thousands with government rebates — we handle all the paperwork and show you exactly what you're eligible for.</p>
         <div class="hero-btns">
-          <a href="#quote" class="btn-p">Request a Quote →</a>
-          <a href="#rebates" class="btn-glass">Check My Rebates</a>
+          <a href="contact-us.html" class="btn-p">Request a Quote →</a>
+          <a href="rebates.html" class="btn-glass">Check My Rebates</a>
         </div>
         <p class="hero-ph">Or call us: <a href="tel:0411375484">0411 375 484</a></p>
       </div>
       <div class="hero-cards">
-        <div class="hero-glass">
-          <div class="hg-icon">💰</div>
-          <div><div class="hg-val">$850+</div><div class="hg-label">Avg. yearly savings</div></div>
-        </div>
-        <div class="hero-glass">
-          <div class="hg-icon">⭐</div>
-          <div><div class="hg-val">5.0</div><div class="hg-label">164 Google reviews</div></div>
-        </div>
-        <div class="hero-glass">
-          <div class="hg-icon">🏛️</div>
-          <div><div class="hg-val">$2,500+</div><div class="hg-label">In rebates available</div></div>
-        </div>
-        <div class="hero-glass">
-          <div class="hg-icon">🔧</div>
-          <div><div class="hg-val">1,000+</div><div class="hg-label">Systems installed</div></div>
-        </div>
-        <div class="hero-glass">
-          <div class="hg-icon">📈</div>
-          <div><div class="hg-val">$1M+</div><div class="hg-label">In customer savings</div></div>
-        </div>
+        <div class="hero-glass"><div class="hg-icon">💰</div><div><div class="hg-val">$850+</div><div class="hg-label">Avg. yearly savings</div></div></div>
+        <div class="hero-glass"><div class="hg-icon">⭐</div><div><div class="hg-val">5.0</div><div class="hg-label">164 Google reviews</div></div></div>
+        <div class="hero-glass"><div class="hg-icon">🏛️</div><div><div class="hg-val">$2,500+</div><div class="hg-label">In rebates available</div></div></div>
+        <div class="hero-glass"><div class="hg-icon">🔧</div><div><div class="hg-val">1,000+</div><div class="hg-label">Systems installed</div></div></div>
       </div>
     </div>
   </div>
@@ -340,30 +75,13 @@ img{max-width:100%;display:block}
 <section class="benefits">
   <div class="ctr">
     <div class="benefits-grid">
-      <div class="ben-item">
-        <div class="ben-ico">⚡</div>
-        <h4>80% Less Energy</h4>
-        <p>Heat pumps use a fraction of the energy of traditional electric or gas systems</p>
-      </div>
-      <div class="ben-item">
-        <div class="ben-ico">🏛️</div>
-        <h4>Govt. Rebate Approved</h4>
-        <p>Stack federal and state rebates to save thousands on your new system</p>
-      </div>
-      <div class="ben-item">
-        <div class="ben-ico">🔧</div>
-        <h4>Installed in 1 Day</h4>
-        <p>Licensed plumbers and electricians — most installs completed same day</p>
-      </div>
-      <div class="ben-item">
-        <div class="ben-ico">🛡️</div>
-        <h4>Price Beat Guarantee</h4>
-        <p>Found a cheaper quote? We'll beat it. No games, no fine print</p>
-      </div>
+      <div class="ben-item"><div class="ben-ico">⚡</div><h4>80% Less Energy</h4><p>Heat pumps use a fraction of the energy of traditional electric or gas systems</p></div>
+      <div class="ben-item"><div class="ben-ico">🏛️</div><h4>Govt. Rebate Approved</h4><p>Stack federal and state rebates to save thousands on your new system</p></div>
+      <div class="ben-item"><div class="ben-ico">🔧</div><h4>Installed in 1 Day</h4><p>Licensed plumbers and electricians — most installs completed same day</p></div>
+      <div class="ben-item"><div class="ben-ico">🛡️</div><h4>Price Beat Guarantee</h4><p>Found a cheaper quote? We'll beat it. No games, no fine print</p></div>
     </div>
   </div>
 </section>
-
 
 <section class="sec reb-sec" id="rebates">
   <div class="ctr">
@@ -371,17 +89,17 @@ img{max-width:100%;display:block}
     <h2 class="sec-t fade">You could save thousands on a new system</h2>
     <p class="sec-sub fade">Victorian homeowners can stack three different government rebates to dramatically reduce the cost. We process all the paperwork and apply them as a point-of-sale discount — you just enjoy the hot water.</p>
     <div class="reb-g">
-      <div class="reb-img fade"><img src="https://www.geelongheatpumps.com.au/thumbnailsmall/IMG_0405.jpg" alt="Geelong Heat Pumps installation"></div>
+      <div class="reb-img fade"><img src="images/install-team-thumbsup.jpg" alt="Geelong Heat Pumps team installation"></div>
       <div class="fade">
         <div class="reb-card">
           <div class="rc-h">Available Rebates</div>
           <div class="rc-r"><span class="l">Federal STCs</span><span class="v s">✓ Available</span></div>
-          <div class="rc-r"><span class="l">Victorian VEECs</span><span class="v s">✓ Available</span></div>
+          <div class="rc-r"><span class="l">Victorian VEECs (VEU)</span><span class="v s">✓ Available</span></div>
           <div class="rc-r"><span class="l">Solar Victoria Hot Water Rebate</span><span class="v s">✓ Available</span></div>
           <div class="rc-tot"><span class="l">Combined savings up to</span><span class="v">$2,500+</span></div>
         </div>
         <div class="rc-note"><strong>⚠ March 2027 deadline:</strong> Victorian homes must replace gas hot water with an efficient electric alternative at end-of-life. Install now while rebates are highest.</div>
-        <a href="#quote" class="btn-p" style="margin-top:20px;display:inline-flex">Request a Quote →</a>
+        <a href="contact-us.html" class="btn-p" style="margin-top:20px;display:inline-flex">Request a Quote →</a>
       </div>
     </div>
   </div>
@@ -395,54 +113,57 @@ img{max-width:100%;display:block}
     <div class="prod-g">
 
       <div class="pcard fade">
-        <div class="pcard-img"><img src="https://www.geelongheatpumps.com.au/thumbnaillarge/sl1.jpg" alt="Emerald Heat Pump"></div>
+        <div class="pcard-img"><img src="images/product-emerald.png" alt="Emerald Heat Pump"></div>
         <div class="pcard-body">
           <div class="tier">Great Value</div>
           <h3>Emerald</h3>
-          <p class="desc">Reliable and affordable — perfect for households making the switch on a budget. Eligible for full government rebates.</p>
+          <p class="desc">Reliable and affordable — perfect for households making the switch on a budget. Built-in electric backup. Eligible for full government rebates.</p>
           <div class="pspecs">
-            <div class="psp"><span class="k">Capacity</span><span class="va">250L / 315L</span></div>
-            <div class="psp"><span class="k">Warranty</span><span class="va">5 Years</span></div>
-            <div class="psp"><span class="k">Noise</span><span class="va">52 dB</span></div>
-            <div class="psp"><span class="k">Best For</span><span class="va">1–3 people</span></div>
+            <div class="psp"><span class="k">Capacity</span><span class="va">270L</span></div>
+            <div class="psp"><span class="k">Refrigerant</span><span class="va">R290 Natural</span></div>
+            <div class="psp"><span class="k">Best For</span><span class="va">Cost-conscious</span></div>
+            <div class="psp"><span class="k">Tier</span><span class="va">$$</span></div>
           </div>
-          <a href="#quote" class="pcta">Get Quote →</a>
+          <a href="emeralds.html" class="pcta">Learn More →</a>
         </div>
       </div>
 
       <div class="pcard feat fade">
         <span class="ptag">Most Popular</span>
-        <div class="pcard-img"><img src="https://www.geelongheatpumps.com.au/thumbnaillarge/DYNAMICX8_Front-1.png" alt="Hydrotherm Dynamic X8"></div>
+        <div class="pcard-img"><img src="images/product-istore.png" alt="iStore Heat Pump"></div>
         <div class="pcard-body">
           <div class="tier">Best Seller</div>
-          <h3>Hydrotherm X8</h3>
-          <p class="desc">Premium all-in-one system with outstanding efficiency, smart controls, and ultra-quiet operation. Maximum rebate eligible.</p>
+          <h3>iStore 270L</h3>
+          <p class="desc">Award-winning all-in-one system. Whisper-quiet at 46.6 dBA, R290 refrigerant, 5-year parts &amp; labour warranty. Maximum rebate eligible.</p>
           <div class="pspecs">
-            <div class="psp"><span class="k">Capacity</span><span class="va">260L</span></div>
-            <div class="psp"><span class="k">Warranty</span><span class="va">5 Years</span></div>
-            <div class="psp"><span class="k">Noise</span><span class="va">48 dB</span></div>
-            <div class="psp"><span class="k">Best For</span><span class="va">2–5 people</span></div>
+            <div class="psp"><span class="k">Capacity</span><span class="va">270L</span></div>
+            <div class="psp"><span class="k">Noise</span><span class="va">46.6 dBA</span></div>
+            <div class="psp"><span class="k">Best For</span><span class="va">Up to 6 people</span></div>
+            <div class="psp"><span class="k">Award</span><span class="va">5× ProductReview</span></div>
           </div>
-          <a href="#quote" class="pcta">Get Quote →</a>
+          <a href="istore.html" class="pcta">Learn More →</a>
         </div>
       </div>
 
       <div class="pcard fade">
-        <div class="pcard-img"><img src="https://www.geelongheatpumps.com.au/thumbnaillarge/stainless-image.jpg" alt="Reclaim Energy Heat Pump"></div>
+        <div class="pcard-img"><img src="images/product-reclaim.jpg" alt="Reclaim Energy Heat Pump"></div>
         <div class="pcard-body">
           <div class="tier">Premium</div>
           <h3>Reclaim Energy</h3>
-          <p class="desc">The gold standard. CO₂ refrigerant, whisper-quiet, and the highest efficiency rating in Australia. Maximum rebate eligible.</p>
+          <p class="desc">The gold standard. CO₂ refrigerant, whisper-quiet, and the highest efficiency rating in Australia. Glass or stainless tank options.</p>
           <div class="pspecs">
-            <div class="psp"><span class="k">Capacity</span><span class="va">315L</span></div>
-            <div class="psp"><span class="k">Warranty</span><span class="va">5 + 5 Years</span></div>
-            <div class="psp"><span class="k">Noise</span><span class="va">37 dB</span></div>
-            <div class="psp"><span class="k">Best For</span><span class="va">3–6 people</span></div>
+            <div class="psp"><span class="k">Capacity</span><span class="va">315L / 400L</span></div>
+            <div class="psp"><span class="k">Refrigerant</span><span class="va">CO₂ Natural</span></div>
+            <div class="psp"><span class="k">Best For</span><span class="va">Larger homes</span></div>
+            <div class="psp"><span class="k">Made In</span><span class="va">Australia</span></div>
           </div>
-          <a href="#quote" class="pcta">Get Quote →</a>
+          <a href="reclaim.html" class="pcta">Learn More →</a>
         </div>
       </div>
 
+    </div>
+    <div style="text-align:center;margin-top:40px" class="fade">
+      <a href="heat-pumps.html" class="btn-dark">Compare All Heat Pumps →</a>
     </div>
   </div>
 </section>
@@ -455,8 +176,8 @@ img{max-width:100%;display:block}
     <div class="why-g">
       <div class="wcard fade"><div class="wico">💰</div><div><h4>Price Beat Guarantee</h4><p>Found a cheaper quote? Show us and we'll beat it. No fine print.</p></div></div>
       <div class="wcard fade"><div class="wico">📋</div><div><h4>We Handle All Paperwork</h4><p>STCs, VEECs, Solar Victoria — we process everything and apply it as a point-of-sale discount.</p></div></div>
-      <div class="wcard fade"><div class="wico">👨‍👩‍👧</div><div><h4>Family-Run & Local</h4><p>We live and work in Geelong. When you call, you talk to us — not a call centre.</p></div></div>
-      <div class="wcard fade"><div class="wico">⚡</div><div><h4>Fast Expert Installation</h4><p>Licensed plumbers & electricians. Most installs done in a single day, booked within 7 days.</p></div></div>
+      <div class="wcard fade"><div class="wico">👨‍👩‍👧</div><div><h4>Family-Run &amp; Local</h4><p>We live and work in Geelong. When you call, you talk to us — not a call centre.</p></div></div>
+      <div class="wcard fade"><div class="wico">⚡</div><div><h4>Fast Expert Installation</h4><p>Licensed plumbers &amp; electricians. Most installs done in a single day, booked within 7 days.</p></div></div>
     </div>
   </div>
 </section>
@@ -474,43 +195,34 @@ img{max-width:100%;display:block}
       </div>
     </a>
   </div>
-
-  <div class="marquee-row right">
-    <div class="marquee-track">
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Incredible service from start to finish. They handled all the rebate paperwork and the install was done in half a day. Already noticing the savings on our bills."</p><div class="ra"><div class="rav">S</div><div><div class="ran">Sarah M.</div><div class="ral">Belmont</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Got quotes from three companies — these guys beat them all AND were the most professional. The iStore unit is whisper quiet. Highly recommend."</p><div class="ra"><div class="rav">D</div><div><div class="ran">David T.</div><div class="ral">Newtown</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Our old gas system died on a Friday — they had us booked for Monday and installed by lunch. Saved heaps with the rebates. Absolute legends."</p><div class="ra"><div class="rav">J</div><div><div class="ran">Jenny K.</div><div class="ral">Ocean Grove</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Very happy with our Reclaim system. The team explained everything clearly, handled the VIC rebate, and left the site spotless. Couldn't ask for more."</p><div class="ra"><div class="rav">M</div><div><div class="ran">Mark R.</div><div class="ral">Highton</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Switched from gas to the Hydrotherm X8. The whole process was seamless — quote to install in under a week. Our energy bills have dropped significantly."</p><div class="ra"><div class="rav">L</div><div><div class="ran">Lisa P.</div><div class="ral">Torquay</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Josh and the team were fantastic. They came out same day for an emergency replacement, handled all the rebate applications, and the new system works perfectly."</p><div class="ra"><div class="rav">C</div><div><div class="ran">Chris W.</div><div class="ral">Lara</div></div></div></div>
-      <!-- Duplicate for seamless loop -->
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Incredible service from start to finish. They handled all the rebate paperwork and the install was done in half a day. Already noticing the savings on our bills."</p><div class="ra"><div class="rav">S</div><div><div class="ran">Sarah M.</div><div class="ral">Belmont</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Got quotes from three companies — these guys beat them all AND were the most professional. The iStore unit is whisper quiet. Highly recommend."</p><div class="ra"><div class="rav">D</div><div><div class="ran">David T.</div><div class="ral">Newtown</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Our old gas system died on a Friday — they had us booked for Monday and installed by lunch. Saved heaps with the rebates. Absolute legends."</p><div class="ra"><div class="rav">J</div><div><div class="ran">Jenny K.</div><div class="ral">Ocean Grove</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Very happy with our Reclaim system. The team explained everything clearly, handled the VIC rebate, and left the site spotless. Couldn't ask for more."</p><div class="ra"><div class="rav">M</div><div><div class="ran">Mark R.</div><div class="ral">Highton</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Switched from gas to the Hydrotherm X8. The whole process was seamless — quote to install in under a week. Our energy bills have dropped significantly."</p><div class="ra"><div class="rav">L</div><div><div class="ran">Lisa P.</div><div class="ral">Torquay</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Josh and the team were fantastic. They came out same day for an emergency replacement, handled all the rebate applications, and the new system works perfectly."</p><div class="ra"><div class="rav">C</div><div><div class="ran">Chris W.</div><div class="ral">Lara</div></div></div></div>
-    </div>
-  </div>
-
-  <!-- Row 2: scrolls left -->
-  <div class="marquee-row left">
-    <div class="marquee-track">
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Best price, best service, best product. We compared five quotes and Geelong Heat Pumps won on every front. Price beat guarantee is the real deal."</p><div class="ra"><div class="rav">A</div><div><div class="ran">Amanda H.</div><div class="ral">Grovedale</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Had no idea about the government rebates until these guys explained it. Ended up saving thousands. The Emerald unit has been running great for six months now."</p><div class="ra"><div class="rav">T</div><div><div class="ran">Tony B.</div><div class="ral">Corio</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Quick, clean, professional. They removed the old gas unit and had the new heat pump running by lunchtime. The rebate process was completely painless."</p><div class="ra"><div class="rav">R</div><div><div class="ran">Rachel F.</div><div class="ral">Leopold</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"We were dreading the cost of replacing our hot water but the rebates made it so affordable. Can't believe we didn't switch sooner. Great team."</p><div class="ra"><div class="rav">P</div><div><div class="ran">Peter D.</div><div class="ral">Waurn Ponds</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Called on a Monday, quoted by Tuesday, installed by Thursday. The Rheem unit is fantastic and our bills are already noticeably lower. Top service."</p><div class="ra"><div class="rav">K</div><div><div class="ran">Karen S.</div><div class="ral">Drysdale</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Honest advice, no pushy sales. They recommended the right size system for our family and handled every bit of paperwork. Couldn't be happier."</p><div class="ra"><div class="rav">N</div><div><div class="ran">Nick G.</div><div class="ral">Barwon Heads</div></div></div></div>
-      <!-- Duplicate for seamless loop -->
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Best price, best service, best product. We compared five quotes and Geelong Heat Pumps won on every front. Price beat guarantee is the real deal."</p><div class="ra"><div class="rav">A</div><div><div class="ran">Amanda H.</div><div class="ral">Grovedale</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Had no idea about the government rebates until these guys explained it. Ended up saving thousands. The Emerald unit has been running great for six months now."</p><div class="ra"><div class="rav">T</div><div><div class="ran">Tony B.</div><div class="ral">Corio</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Quick, clean, professional. They removed the old gas unit and had the new heat pump running by lunchtime. The rebate process was completely painless."</p><div class="ra"><div class="rav">R</div><div><div class="ran">Rachel F.</div><div class="ral">Leopold</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"We were dreading the cost of replacing our hot water but the rebates made it so affordable. Can't believe we didn't switch sooner. Great team."</p><div class="ra"><div class="rav">P</div><div><div class="ran">Peter D.</div><div class="ral">Waurn Ponds</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Called on a Monday, quoted by Tuesday, installed by Thursday. The Rheem unit is fantastic and our bills are already noticeably lower. Top service."</p><div class="ra"><div class="rav">K</div><div><div class="ran">Karen S.</div><div class="ral">Drysdale</div></div></div></div>
-      <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Honest advice, no pushy sales. They recommended the right size system for our family and handled every bit of paperwork. Couldn't be happier."</p><div class="ra"><div class="rav">N</div><div><div class="ran">Nick G.</div><div class="ral">Barwon Heads</div></div></div></div>
-    </div>
-  </div>
+  <div class="marquee-row right"><div class="marquee-track">
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Incredible service from start to finish. They handled all the rebate paperwork and the install was done in half a day. Already noticing the savings on our bills."</p><div class="ra"><div class="rav">S</div><div><div class="ran">Sarah M.</div><div class="ral">Belmont</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Got quotes from three companies — these guys beat them all AND were the most professional. The iStore unit is whisper quiet. Highly recommend."</p><div class="ra"><div class="rav">D</div><div><div class="ran">David T.</div><div class="ral">Newtown</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Our old gas system died on a Friday — they had us booked for Monday and installed by lunch. Saved heaps with the rebates. Absolute legends."</p><div class="ra"><div class="rav">J</div><div><div class="ran">Jenny K.</div><div class="ral">Ocean Grove</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Very happy with our Reclaim system. The team explained everything clearly, handled the VIC rebate, and left the site spotless. Couldn't ask for more."</p><div class="ra"><div class="rav">M</div><div><div class="ran">Mark R.</div><div class="ral">Highton</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Switched from gas to the Hydrotherm X8. The whole process was seamless — quote to install in under a week. Our energy bills have dropped significantly."</p><div class="ra"><div class="rav">L</div><div><div class="ran">Lisa P.</div><div class="ral">Torquay</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Josh and the team were fantastic. They came out same day for an emergency replacement, handled all the rebate applications, and the new system works perfectly."</p><div class="ra"><div class="rav">C</div><div><div class="ran">Chris W.</div><div class="ral">Lara</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Incredible service from start to finish. They handled all the rebate paperwork and the install was done in half a day. Already noticing the savings on our bills."</p><div class="ra"><div class="rav">S</div><div><div class="ran">Sarah M.</div><div class="ral">Belmont</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Got quotes from three companies — these guys beat them all AND were the most professional. The iStore unit is whisper quiet. Highly recommend."</p><div class="ra"><div class="rav">D</div><div><div class="ran">David T.</div><div class="ral">Newtown</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Our old gas system died on a Friday — they had us booked for Monday and installed by lunch. Saved heaps with the rebates. Absolute legends."</p><div class="ra"><div class="rav">J</div><div><div class="ran">Jenny K.</div><div class="ral">Ocean Grove</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Very happy with our Reclaim system. The team explained everything clearly, handled the VIC rebate, and left the site spotless. Couldn't ask for more."</p><div class="ra"><div class="rav">M</div><div><div class="ran">Mark R.</div><div class="ral">Highton</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Switched from gas to the Hydrotherm X8. The whole process was seamless — quote to install in under a week. Our energy bills have dropped significantly."</p><div class="ra"><div class="rav">L</div><div><div class="ran">Lisa P.</div><div class="ral">Torquay</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Josh and the team were fantastic. They came out same day for an emergency replacement, handled all the rebate applications, and the new system works perfectly."</p><div class="ra"><div class="rav">C</div><div><div class="ran">Chris W.</div><div class="ral">Lara</div></div></div></div>
+  </div></div>
+  <div class="marquee-row left"><div class="marquee-track">
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Best price, best service, best product. We compared five quotes and Geelong Heat Pumps won on every front. Price beat guarantee is the real deal."</p><div class="ra"><div class="rav">A</div><div><div class="ran">Amanda H.</div><div class="ral">Grovedale</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Had no idea about the government rebates until these guys explained it. Ended up saving thousands. The Emerald unit has been running great for six months now."</p><div class="ra"><div class="rav">T</div><div><div class="ran">Tony B.</div><div class="ral">Corio</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Quick, clean, professional. They removed the old gas unit and had the new heat pump running by lunchtime. The rebate process was completely painless."</p><div class="ra"><div class="rav">R</div><div><div class="ran">Rachel F.</div><div class="ral">Leopold</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"We were dreading the cost of replacing our hot water but the rebates made it so affordable. Can't believe we didn't switch sooner. Great team."</p><div class="ra"><div class="rav">P</div><div><div class="ran">Peter D.</div><div class="ral">Waurn Ponds</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Called on a Monday, quoted by Tuesday, installed by Thursday. The Rheem unit is fantastic and our bills are already noticeably lower. Top service."</p><div class="ra"><div class="rav">K</div><div><div class="ran">Karen S.</div><div class="ral">Drysdale</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Honest advice, no pushy sales. They recommended the right size system for our family and handled every bit of paperwork. Couldn't be happier."</p><div class="ra"><div class="rav">N</div><div><div class="ran">Nick G.</div><div class="ral">Barwon Heads</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Best price, best service, best product. We compared five quotes and Geelong Heat Pumps won on every front. Price beat guarantee is the real deal."</p><div class="ra"><div class="rav">A</div><div><div class="ran">Amanda H.</div><div class="ral">Grovedale</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Had no idea about the government rebates until these guys explained it. Ended up saving thousands. The Emerald unit has been running great for six months now."</p><div class="ra"><div class="rav">T</div><div><div class="ran">Tony B.</div><div class="ral">Corio</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Quick, clean, professional. They removed the old gas unit and had the new heat pump running by lunchtime. The rebate process was completely painless."</p><div class="ra"><div class="rav">R</div><div><div class="ran">Rachel F.</div><div class="ral">Leopold</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"We were dreading the cost of replacing our hot water but the rebates made it so affordable. Can't believe we didn't switch sooner. Great team."</p><div class="ra"><div class="rav">P</div><div><div class="ran">Peter D.</div><div class="ral">Waurn Ponds</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Called on a Monday, quoted by Tuesday, installed by Thursday. The Rheem unit is fantastic and our bills are already noticeably lower. Top service."</p><div class="ra"><div class="rav">K</div><div><div class="ran">Karen S.</div><div class="ral">Drysdale</div></div></div></div>
+    <div class="rcard"><div class="rs">★★★★★</div><p class="rt">"Honest advice, no pushy sales. They recommended the right size system for our family and handled every bit of paperwork. Couldn't be happier."</p><div class="ra"><div class="rav">N</div><div><div class="ran">Nick G.</div><div class="ral">Barwon Heads</div></div></div></div>
+  </div></div>
 </section>
 
 <div class="sec" style="padding-bottom:56px">
@@ -518,7 +230,7 @@ img{max-width:100%;display:block}
     <div class="urg-in">
       <h3>⚠️ <span class="em">Victoria Gas Phase-Out</span> — Act Before the Rush</h3>
       <p>From March 2027, all Victorian homes must replace gas hot water with an efficient electric alternative at end-of-life. Beat the demand surge — install now while rebates are highest.</p>
-      <a href="#quote" class="btn-p">Request a Quote →</a>
+      <a href="contact-us.html" class="btn-p">Request a Quote →</a>
     </div>
   </div>
 </div>
@@ -536,39 +248,39 @@ img{max-width:100%;display:block}
           <div class="fperk"><div class="fpd">✓</div>Personalised system recommendation</div>
           <div class="fperk"><div class="fpd">✓</div>Response within 2 hours</div>
         </div>
-        <div class="form-img"><img src="https://www.geelongheatpumps.com.au/thumbnaillarge/M_left_imgC-light1.jpg" alt="Heat pump hot water bathroom"></div>
+        <div class="form-img"><img src="images/install-selfie.jpg" alt="Geelong Heat Pumps installer"></div>
       </div>
       <div class="qform fade">
         <div class="fsteps"><div class="fstep active"></div><div class="fstep"></div><div class="fstep"></div><div class="fstep"></div></div>
         <div class="fslide active" data-s="1">
           <h3>What's your current hot water system?</h3><p class="fsub">This helps us calculate your rebate eligibility.</p>
           <div class="og">
-            <button class="ob" data-v="electric" onclick="sel(this)"><div class="oico">⚡</div><div class="olbl">Electric</div></button>
-            <button class="ob" data-v="gas" onclick="sel(this)"><div class="oico">🔥</div><div class="olbl">Gas</div></button>
-            <button class="ob" data-v="solar" onclick="sel(this)"><div class="oico">☀️</div><div class="olbl">Solar</div></button>
-            <button class="ob" data-v="unsure" onclick="sel(this)"><div class="oico">❓</div><div class="olbl">Not Sure</div></button>
+            <button class="ob" data-v="electric"><div class="oico">⚡</div><div class="olbl">Electric</div></button>
+            <button class="ob" data-v="gas"><div class="oico">🔥</div><div class="olbl">Gas</div></button>
+            <button class="ob" data-v="solar"><div class="oico">☀️</div><div class="olbl">Solar</div></button>
+            <button class="ob" data-v="unsure"><div class="oico">❓</div><div class="olbl">Not Sure</div></button>
           </div>
-          <div class="fnav"><button class="fn" onclick="nxt()">Next →</button></div>
+          <div class="fnav"><button class="fn">Next →</button></div>
         </div>
         <div class="fslide" data-s="2">
           <h3>How many people in your household?</h3><p class="fsub">We'll recommend the right tank size.</p>
           <div class="og">
-            <button class="ob" data-v="1-2" onclick="sel(this)"><div class="oico">👤</div><div class="olbl">1–2</div></button>
-            <button class="ob" data-v="3-4" onclick="sel(this)"><div class="oico">👥</div><div class="olbl">3–4</div></button>
-            <button class="ob" data-v="5-6" onclick="sel(this)"><div class="oico">👨‍👩‍👧‍👦</div><div class="olbl">5–6</div></button>
-            <button class="ob" data-v="7+" onclick="sel(this)"><div class="oico">🏠</div><div class="olbl">7+</div></button>
+            <button class="ob" data-v="1-2"><div class="oico">👤</div><div class="olbl">1–2</div></button>
+            <button class="ob" data-v="3-4"><div class="oico">👥</div><div class="olbl">3–4</div></button>
+            <button class="ob" data-v="5-6"><div class="oico">👨‍👩‍👧‍👦</div><div class="olbl">5–6</div></button>
+            <button class="ob" data-v="7+"><div class="oico">🏠</div><div class="olbl">7+</div></button>
           </div>
-          <div class="fnav"><button class="fb" onclick="prv()">← Back</button><button class="fn" onclick="nxt()">Next →</button></div>
+          <div class="fnav"><button class="fb">← Back</button><button class="fn">Next →</button></div>
         </div>
         <div class="fslide" data-s="3">
           <h3>What do you need?</h3><p class="fsub">We cover installs, replacements, and repairs.</p>
           <div class="og">
-            <button class="ob" data-v="new" onclick="sel(this)"><div class="oico">🆕</div><div class="olbl">New Install</div></button>
-            <button class="ob" data-v="replace" onclick="sel(this)"><div class="oico">🔄</div><div class="olbl">Replacement</div></button>
-            <button class="ob" data-v="repair" onclick="sel(this)"><div class="oico">🔧</div><div class="olbl">Repair</div></button>
-            <button class="ob" data-v="advice" onclick="sel(this)"><div class="oico">💬</div><div class="olbl">Just Advice</div></button>
+            <button class="ob" data-v="new"><div class="oico">🆕</div><div class="olbl">New Install</div></button>
+            <button class="ob" data-v="replace"><div class="oico">🔄</div><div class="olbl">Replacement</div></button>
+            <button class="ob" data-v="repair"><div class="oico">🔧</div><div class="olbl">Repair</div></button>
+            <button class="ob" data-v="advice"><div class="oico">💬</div><div class="olbl">Just Advice</div></button>
           </div>
-          <div class="fnav"><button class="fb" onclick="prv()">← Back</button><button class="fn" onclick="nxt()">Next →</button></div>
+          <div class="fnav"><button class="fb">← Back</button><button class="fn">Next →</button></div>
         </div>
         <div class="fslide" data-s="4">
           <h3>Almost done — your details</h3><p class="fsub">We'll be in touch within 2 hours.</p>
@@ -576,7 +288,7 @@ img{max-width:100%;display:block}
           <input type="tel" class="finp" placeholder="Phone number" id="fp">
           <input type="email" class="finp" placeholder="Email address" id="fe">
           <input type="text" class="finp" placeholder="Suburb" id="fs">
-          <div class="fnav"><button class="fb" onclick="prv()">← Back</button><button class="fn" onclick="sub()">Request My Quote →</button></div>
+          <div class="fnav"><button class="fb">← Back</button><button class="fn" data-action="submit">Request My Quote →</button></div>
         </div>
         <div class="fslide" data-s="5">
           <div style="text-align:center;padding:28px 0"><div style="font-size:2.2rem;margin-bottom:10px">✅</div><h3 style="margin-bottom:6px">We're On It!</h3><p class="fsub" style="margin:0">We'll be in touch within 2 hours with your personalised rebate breakdown and system recommendation.</p></div>
@@ -596,33 +308,19 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-
-
 <footer class="foot">
   <div class="ctr">
     <div class="foot-g">
-      <div class="foot-brand"><a href="#" class="logo"><img src="https://www.geelongheatpumps.com.au/files/logo.svg" alt="Geelong Heat Pumps"></a><p>Geelong's trusted heat pump specialists. Government rebate approved. Price beat guarantee on every install.</p></div>
-      <div><h4>Heat Pumps</h4><ul class="foot-l"><li><a href="#products">Hydrotherm X8</a></li><li><a href="#products">Reclaim Energy</a></li><li><a href="#products">Emerald</a></li><li><a href="#products">Rheem</a></li><li><a href="#products">iStore</a></li><li><a href="#products">Aquatech</a></li></ul></div>
-      <div><h4>Services</h4><ul class="foot-l"><li><a href="#quote">New Installation</a></li><li><a href="#quote">Replacement</a></li><li><a href="#quote">Maintenance</a></li><li><a href="#rebates">Rebate Processing</a></li><li><a href="#">Pool Heat Pumps</a></li><li><a href="#">Heating &amp; Cooling</a></li></ul></div>
-      <div><h4>Contact</h4><ul class="foot-l"><li><a href="tel:0411375484">0411 375 484</a></li><li><a href="mailto:info@geelongheatpumps.com.au">info@geelongheatpumps.com.au</a></li><li><a>Shop 4, 21-23 Gregory Ave<br>Newtown VIC 3220</a></li></ul></div>
+      <div class="foot-brand"><a href="index.html" class="logo"><img src="https://www.geelongheatpumps.com.au/files/logo.svg" alt="Geelong Heat Pumps"></a><p>Geelong's trusted heat pump specialists. Government rebate approved. Price beat guarantee on every install.</p></div>
+      <div><h4>Heat Pumps</h4><ul class="foot-l"><li><a href="reclaim.html">Reclaim Energy</a></li><li><a href="istore.html">iStore</a></li><li><a href="rheem.html">Rheem</a></li><li><a href="aquatech.html">Aquatech</a></li><li><a href="emeralds.html">Emerald</a></li></ul></div>
+      <div><h4>Services</h4><ul class="foot-l"><li><a href="services.html">New Installation</a></li><li><a href="services.html">Replacement</a></li><li><a href="services.html">Maintenance</a></li><li><a href="rebates.html">Rebate Processing</a></li><li><a href="pool-heat-pumps.html">Pool Heat Pumps</a></li><li><a href="heating-cooling.html">Heating &amp; Cooling</a></li></ul></div>
+      <div><h4>Contact</h4><ul class="foot-l"><li><a href="tel:0411375484">0411 375 484</a></li><li><a href="mailto:info@geelongheatpumps.com.au">info@geelongheatpumps.com.au</a></li><li><a>Shop 4, 21-23 Gregory Ave<br>Newtown VIC 3220</a></li><li><a>Mon–Fri 8am–5pm</a></li></ul></div>
     </div>
-    <div class="foot-b"><span>2026 Geelong Heat Pumps</span><span>Website by <a href="https://rankify.com.au">Rankify</a></span></div>
+    <div class="foot-b"><span>© 2026 Geelong Heat Pumps</span><span>Website by <a href="https://rankify.com.au">Rankify</a></span></div>
   </div>
 </footer>
 
-<div class="sticky"><a href="tel:0411375484" class="sc">Call</a><a href="#quote" class="sq">Request a Quote</a></div>
-
-<script>
-window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',scrollY>50)});
-var io=new IntersectionObserver(function(entries){entries.forEach(function(x){if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}})},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.fade').forEach(function(el){io.observe(el)});
-var cs=1,fd={};
-function sel(b){b.closest('.og').querySelectorAll('.ob').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');fd['s'+b.closest('.fslide').dataset.s]=b.dataset.v}
-function nxt(){if(cs>=4)return;if(cs<=3&&!document.querySelector('.fslide[data-s="'+cs+'"] .ob.sel'))return;cs++;upd()}
-function prv(){if(cs<=1)return;cs--;upd()}
-function upd(){document.querySelectorAll('.fslide').forEach(function(s){s.classList.remove('active')});document.querySelector('.fslide[data-s="'+cs+'"]').classList.add('active');document.querySelectorAll('.fstep').forEach(function(s,i){s.classList.remove('active','done');if(i+1===cs)s.classList.add('active');if(i+1<cs)s.classList.add('done')})}
-function sub(){var n=document.getElementById('fn').value,p=document.getElementById('fp').value,e=document.getElementById('fe').value,s=document.getElementById('fs').value;if(!n||!p||!e||!s){alert('Please fill in all fields');return}fd.name=n;fd.phone=p;fd.email=e;fd.suburb=s;cs=5;document.querySelectorAll('.fslide').forEach(function(s){s.classList.remove('active')});document.querySelector('.fslide[data-s="5"]').classList.add('active');document.querySelectorAll('.fstep').forEach(function(s){s.classList.remove('active');s.classList.add('done')})}
-document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
-</script>
+<div class="sticky"><a href="tel:0411375484" class="sc">📞 Call</a><a href="contact-us.html" class="sq">Free Quote</a></div>
+<script src="assets/site.js"></script>
 </body>
 </html>
