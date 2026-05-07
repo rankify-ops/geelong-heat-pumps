@@ -53,12 +53,12 @@
       if(t){ ev.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
     });
   });
-  // Quote form (multi-step)
-  var qform = document.querySelector('.qform');
-  if(qform){
+  // Quote form (multi-step) — supports multiple forms per page
+  document.querySelectorAll('.qform').forEach(function(qform){
     var cs=1, fd={};
     var slides = qform.querySelectorAll('.fslide');
     var steps = qform.querySelectorAll('.fstep');
+    if(!slides.length) return;
     var maxStep = slides.length - 1; // last is success
     var upd = function(){
       slides.forEach(function(s){ s.classList.remove('active'); });
@@ -76,17 +76,43 @@
         grp.querySelectorAll('.ob').forEach(function(x){ x.classList.remove('sel'); });
         b.classList.add('sel');
         var slide = b.closest('.fslide');
-        fd['s'+slide.dataset.s] = b.dataset.v;
+        var key = slide.dataset.field || ('Question ' + slide.dataset.s);
+        fd[key] = b.dataset.v;
       });
     });
+    var sendQuote = function(){
+      // Collect all named inputs in the contact slide
+      var inputs = qform.querySelectorAll('.fslide[data-s="'+cs+'"] .finp');
+      var required = qform.querySelectorAll('.fslide[data-s="'+cs+'"] .finp:not([data-optional])');
+      var missing = [];
+      required.forEach(function(i){ if(!i.value.trim()) missing.push(i.placeholder || i.name); });
+      if(missing.length){ alert('Please fill: ' + missing.join(', ')); return false; }
+      inputs.forEach(function(i){
+        if(i.value.trim()) fd[i.placeholder || i.name || i.id] = i.value.trim();
+      });
+
+      // Build mailto
+      var ctx = qform.dataset.context || 'Quote Request';
+      var subject = 'Website enquiry — ' + ctx;
+      var body = 'New quote request from geelongheatpumps.com.au\n\n';
+      body += 'Service: ' + ctx + '\n';
+      body += '------------------------------\n\n';
+      Object.keys(fd).forEach(function(k){ body += k + ': ' + fd[k] + '\n'; });
+      body += '\n------------------------------\nPage: ' + window.location.href;
+
+      var to = qform.dataset.to || 'info@geelongheatpumps.com.au';
+      var mailto = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      // Open mail client in a new tab so the form's success state still shows
+      var a = document.createElement('a');
+      a.href = mailto; a.style.display = 'none';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      return true;
+    };
     qform.querySelectorAll('.fn').forEach(function(btn){
       btn.addEventListener('click', function(){
         if(btn.dataset.action === 'submit'){
-          var inputs = qform.querySelectorAll('.fslide[data-s="'+cs+'"] .finp');
-          var allFilled = true;
-          inputs.forEach(function(i){ if(!i.value.trim()) allFilled = false; });
-          if(!allFilled){ alert('Please fill in all fields'); return; }
-          inputs.forEach(function(i){ fd[i.id||i.name] = i.value; });
+          if(!sendQuote()) return;
           cs = maxStep + 1;
           slides.forEach(function(s){ s.classList.remove('active'); });
           var done = qform.querySelector('.fslide[data-s="'+cs+'"]');
@@ -96,14 +122,14 @@
         }
         if(cs >= maxStep) return;
         var sel = qform.querySelector('.fslide[data-s="'+cs+'"] .ob.sel');
-        if(cs<=3 && !sel) return;
+        if(cs < maxStep && !sel) return;
         cs++; upd();
       });
     });
     qform.querySelectorAll('.fb').forEach(function(b){
       b.addEventListener('click', function(){ if(cs<=1) return; cs--; upd(); });
     });
-  }
+  });
   // ===== COMPARE TOOL =====
   var compareEl = document.getElementById('compareTool');
   if(compareEl){
