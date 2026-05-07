@@ -121,11 +121,29 @@
       var hp = qform.querySelector('input[name="_honey"]');
       if(hp && hp.value){ cb(true); return; } // pretend success for bots
 
+      // First-name for personalisation
+      var userName = '';
+      Object.keys(fd).forEach(function(k){ if(/name/i.test(k) && !userName) userName = fd[k]; });
+      var firstName = (userName.split(' ')[0] || 'there');
+
+      var autoResponse =
+        'Hi ' + firstName + ',\n\n' +
+        'Thanks for your enquiry about ' + ctx + ' — we\'ve received it and will be in touch within 2 hours with your personalised quote and full rebate breakdown.\n\n' +
+        'Need urgent help in the meantime? Call us on 0411 375 484 (Mon–Fri 8am–5pm).\n\n' +
+        'Cheers,\n' +
+        'The Geelong Heat Pumps Team\n' +
+        '0411 375 484 | info@geelongheatpumps.com.au\n' +
+        'Shop 4, 21-23 Gregory Ave, Newtown VIC 3220';
+
       var payload = {
         _subject: subject,
         _captcha: 'false',
         _template: 'table',
         _replyto: userEmail || '',
+        // formsubmit uses the field literally called "email" (lowercase) as the
+        // address for the autoresponse and reply-to header.
+        email: userEmail || '',
+        _autoresponse: autoResponse,
         Service: ctx,
         Page: window.location.href
       };
