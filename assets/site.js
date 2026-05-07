@@ -80,44 +80,88 @@
         fd[key] = b.dataset.v;
       });
     });
-    var sendQuote = function(){
-      // Collect all named inputs in the contact slide
+    var showSuccess = function(){
+      cs = maxStep + 1;
+      slides.forEach(function(s){ s.classList.remove('active'); });
+      var done = qform.querySelector('.fslide[data-s="'+cs+'"]');
+      if(done) done.classList.add('active');
+      steps.forEach(function(s){ s.classList.remove('active'); s.classList.add('done'); });
+    };
+    var showError = function(msg){
+      var errSlot = qform.querySelector('.qform-error');
+      if(!errSlot){
+        errSlot = document.createElement('div');
+        errSlot.className = 'qform-error';
+        errSlot.style.cssText = 'margin-top:12px;padding:12px 14px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;color:#991b1b;font-size:.85rem;border-radius:8px;line-height:1.5';
+        var contactSlide = qform.querySelector('.fslide[data-s="'+maxStep+'"]');
+        if(contactSlide) contactSlide.appendChild(errSlot);
+      }
+      errSlot.innerHTML = msg;
+    };
+    var submitBtn = function(){ return qform.querySelector('.fn[data-action="submit"]'); };
+    var sendQuote = function(cb){
       var inputs = qform.querySelectorAll('.fslide[data-s="'+cs+'"] .finp');
       var required = qform.querySelectorAll('.fslide[data-s="'+cs+'"] .finp:not([data-optional])');
       var missing = [];
       required.forEach(function(i){ if(!i.value.trim()) missing.push(i.placeholder || i.name); });
-      if(missing.length){ alert('Please fill: ' + missing.join(', ')); return false; }
+      if(missing.length){ alert('Please fill: ' + missing.join(', ')); cb(false); return; }
       inputs.forEach(function(i){
         if(i.value.trim()) fd[i.placeholder || i.name || i.id] = i.value.trim();
       });
 
-      // Build mailto
       var ctx = qform.dataset.context || 'Quote Request';
-      var subject = 'Website enquiry — ' + ctx;
-      var body = 'New quote request from geelongheatpumps.com.au\n\n';
-      body += 'Service: ' + ctx + '\n';
-      body += '------------------------------\n\n';
-      Object.keys(fd).forEach(function(k){ body += k + ': ' + fd[k] + '\n'; });
-      body += '\n------------------------------\nPage: ' + window.location.href;
-
       var to = qform.dataset.to || 'info@geelongheatpumps.com.au';
-      var mailto = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var subject = 'Website enquiry — ' + ctx;
 
-      // Open mail client in a new tab so the form's success state still shows
-      var a = document.createElement('a');
-      a.href = mailto; a.style.display = 'none';
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
-      return true;
+      // Try to find user's email so the client can hit "Reply"
+      var userEmail = '';
+      Object.keys(fd).forEach(function(k){ if(/email/i.test(k) && !userEmail) userEmail = fd[k]; });
+
+      // Honeypot — if filled, treat as spam (server will silently drop)
+      var hp = qform.querySelector('input[name="_honey"]');
+      if(hp && hp.value){ cb(true); return; } // pretend success for bots
+
+      var payload = {
+        _subject: subject,
+        _captcha: 'false',
+        _template: 'table',
+        _replyto: userEmail || '',
+        Service: ctx,
+        Page: window.location.href
+      };
+      Object.keys(fd).forEach(function(k){ payload[k] = fd[k]; });
+
+      var btn = submitBtn();
+      var origText = btn ? btn.textContent : '';
+      if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; btn.style.opacity = '.7'; }
+
+      var endpoint = 'https://formsubmit.co/ajax/' + encodeURIComponent(to);
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok:r.ok, j:j }; }); })
+      .then(function(res){
+        if(btn){ btn.disabled = false; btn.textContent = origText; btn.style.opacity = ''; }
+        if(res.ok && res.j && (res.j.success === true || res.j.success === 'true' || /success/i.test(res.j.message||''))){
+          cb(true);
+        } else {
+          showError('Sorry, we couldn\'t send that automatically. Please call <a href="tel:0411375484" style="color:#dc2626;font-weight:700">0411 375 484</a> or email <a href="mailto:'+to+'" style="color:#dc2626;font-weight:700">'+to+'</a>.');
+          cb(false);
+        }
+      })
+      .catch(function(){
+        if(btn){ btn.disabled = false; btn.textContent = origText; btn.style.opacity = ''; }
+        showError('Network issue. Please call <a href="tel:0411375484" style="color:#dc2626;font-weight:700">0411 375 484</a> or email <a href="mailto:'+to+'" style="color:#dc2626;font-weight:700">'+to+'</a>.');
+        cb(false);
+      });
     };
     qform.querySelectorAll('.fn').forEach(function(btn){
       btn.addEventListener('click', function(){
         if(btn.dataset.action === 'submit'){
-          if(!sendQuote()) return;
-          cs = maxStep + 1;
-          slides.forEach(function(s){ s.classList.remove('active'); });
-          var done = qform.querySelector('.fslide[data-s="'+cs+'"]');
-          if(done) done.classList.add('active');
-          steps.forEach(function(s){ s.classList.remove('active'); s.classList.add('done'); });
+          sendQuote(function(success){ if(success) showSuccess(); });
           return;
         }
         if(cs >= maxStep) return;
