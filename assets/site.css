@@ -259,7 +259,9 @@ body.light-hero .dropdown{top:calc(100% + 4px)}
 .fperk{display:flex;align-items:center;gap:11px;font-size:.87rem;color:var(--g600)}
 .fpd{width:22px;height:22px;min-width:22px;background:var(--green-light);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:.65rem;font-weight:800}
 .qform{background:var(--white);border:1.5px solid var(--g200);border-radius:var(--r);padding:32px;box-shadow:var(--shadow-l);scroll-margin-top:90px}
-.qform-head{display:none}
+.qform-head{display:none;margin:-8px 0 18px}
+.qform-head .qh-tag{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--orange);font-weight:700;margin-bottom:6px}
+.qform-head h3{font-size:1.3rem;line-height:1.2;margin:0;font-weight:800}
 .fsteps{display:flex;gap:5px;margin-bottom:24px}
 .fstep{flex:1;height:3px;background:var(--g100);border-radius:3px;transition:background .4s}
 .fstep.active{background:var(--orange)}
@@ -447,6 +449,7 @@ textarea.finp{resize:vertical;min-height:90px}
   .sec{padding:72px 0}
   .urg-in{padding:28px 20px}
   .form-img{display:none}
+  .qform-head{display:block}
   .phero{padding:130px 0 64px}
 }
 @media(max-width:480px){
