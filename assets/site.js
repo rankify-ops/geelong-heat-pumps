@@ -128,7 +128,7 @@
 
       var autoResponse =
         'Hi ' + firstName + ',\n\n' +
-        'Thanks for your enquiry about ' + ctx + ' — we\'ve received it and will be in touch within 2 hours with your personalised quote and full rebate breakdown.\n\n' +
+        'Thanks for your enquiry about ' + ctx + ' — we\'ve received it and will be in touch with your personalised quote and full rebate breakdown.\n\n' +
         'Need urgent help in the meantime? Call us on 0411 375 484 (Mon–Fri 8am–5pm).\n\n' +
         'Cheers,\n' +
         'The Geelong Heat Pumps Team\n' +
