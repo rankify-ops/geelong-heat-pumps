@@ -93,4 +93,123 @@
       b.addEventListener('click', function(){ if(cs<=1) return; cs--; upd(); });
     });
   }
+  // ===== COMPARE TOOL =====
+  var compareEl = document.getElementById('compareTool');
+  if(compareEl){
+    var BRANDS = {
+      emerald: { name:'Emerald', tier:'Great Value · $$', img:'images/product-emerald.png', href:'emeralds.html', specs:[
+        ['Capacity','270L'],
+        ['Recovery rate','79–108 L/hr'],
+        ['Refrigerant','R290 Natural'],
+        ['Configuration','All-in-one'],
+        ['Smart control','Built-in WiFi'],
+        ['Noise','49–50 dB(A)'],
+        ['Compressor','GMCC / Hitachi'],
+        ['Warranty','5yr Parts & Labour'],
+        ['Made in','Imported'],
+        ['Best for','Cost-conscious'],
+      ] },
+      aquatech: { name:'Aquatech', tier:'Reliable · $$$', img:'images/product-aquatech.png', href:'aquatech.html', specs:[
+        ['Capacity','225L / 268L'],
+        ['Recovery rate','198–280 min full tank'],
+        ['Refrigerant','R290 Natural'],
+        ['Configuration','All-in-one (plug-in)'],
+        ['Smart control','WiFi · 5 modes'],
+        ['Noise','43 dB(A)'],
+        ['Compressor','Toshiba'],
+        ['Warranty','5 Years'],
+        ['Min temp','Down to -7°C'],
+        ['Best for','Budget mid-range'],
+      ] },
+      istore: { name:'iStore', tier:'Best Seller · $$$', img:'images/product-istore.png', href:'istore.html', feat:true, specs:[
+        ['Capacity','270L (180L on req)'],
+        ['Recovery rate','70–80 L/hr'],
+        ['Refrigerant','R290 Natural'],
+        ['Configuration','All-in-one'],
+        ['Smart control','iStore app · WiFi'],
+        ['Noise','~47 dB'],
+        ['Energy cut','Up to 2/3 vs gas/elec'],
+        ['Warranty','5 Years'],
+        ['Made in','Imported'],
+        ['Best for','4–6 person homes'],
+      ] },
+      rheem: { name:'Rheem AmbiPower', tier:'Premium · $$$$', img:'images/product-rheem.jpg', href:'rheem.html', specs:[
+        ['Capacity','280L / 315L / 325L'],
+        ['Recovery rate','56–87 L/hr'],
+        ['Refrigerant','R290 Natural'],
+        ['Configuration','All-in-one or Split'],
+        ['Smart control','Touchscreen LED'],
+        ['Noise','47–48 dB(A)'],
+        ['Tank options','Vitreous / Stainless'],
+        ['Warranty','10yr Cylinder'],
+        ['Made in','Australia'],
+        ['Best for','Trusted brand pick'],
+      ] },
+      reclaim: { name:'Reclaim Energy', tier:'Premium · $$$$', img:'images/product-reclaim.jpg', href:'reclaim.html', specs:[
+        ['Capacity','160 / 250 / 315 / 400L'],
+        ['Recovery rate','Up to 110 L/hr'],
+        ['Refrigerant','CO₂ Natural'],
+        ['Configuration','Split System'],
+        ['Smart control','V1.1 or V2 WiFi'],
+        ['Noise','~37 dB'],
+        ['Tank options','Glass or Stainless'],
+        ['Warranty','7–10 yr (controller)'],
+        ['Made in','Australia'],
+        ['Best for','Larger / solar homes'],
+      ] },
+    };
+    var DEFAULT = ['emerald','istore','reclaim'];
+    var MAX = 3;
+    var selected = DEFAULT.slice();
+    var chipsEl = compareEl.querySelector('.csel');
+    var gridEl = compareEl.querySelector('.cmp-grid');
+    var hintEl = compareEl.querySelector('.csel-hint');
+
+    function renderChips(){
+      chipsEl.innerHTML = '';
+      Object.keys(BRANDS).forEach(function(key){
+        var b = BRANDS[key];
+        var isOn = selected.indexOf(key) > -1;
+        var atMax = selected.length >= MAX && !isOn;
+        var btn = document.createElement('button');
+        btn.className = 'csel-chip' + (isOn ? ' on' : '') + (atMax ? ' dis' : '');
+        btn.type = 'button';
+        btn.dataset.key = key;
+        btn.innerHTML = '<span class="csel-dot">' + (isOn ? '✓' : '') + '</span>' + b.name;
+        btn.addEventListener('click', function(){
+          if(this.classList.contains('dis')) return;
+          var idx = selected.indexOf(key);
+          if(idx > -1){ selected.splice(idx,1); }
+          else if(selected.length < MAX){ selected.push(key); }
+          render();
+        });
+        chipsEl.appendChild(btn);
+      });
+      hintEl.textContent = 'Pick up to ' + MAX + ' to compare · ' + selected.length + ' selected';
+    }
+    function renderGrid(){
+      gridEl.className = 'cmp-grid cnt-' + selected.length;
+      if(selected.length === 0){
+        gridEl.innerHTML = '<div class="cmp-empty">👆 Select 2 or 3 brands above to compare them side-by-side.</div>';
+        return;
+      }
+      // Order: keep BRANDS order so columns are consistent
+      var ordered = Object.keys(BRANDS).filter(function(k){ return selected.indexOf(k) > -1; });
+      gridEl.innerHTML = ordered.map(function(key){
+        var b = BRANDS[key];
+        var rows = b.specs.map(function(s){
+          return '<div class="cmp-row"><span class="k">' + s[0] + '</span><span class="v">' + s[1] + '</span></div>';
+        }).join('');
+        return '<div class="cmp-card' + (b.feat ? ' feat' : '') + '">' +
+          '<div class="cmp-card-img"><img src="' + b.img + '" alt="' + b.name + '"></div>' +
+          '<div class="tier">' + b.tier + '</div>' +
+          '<h4>' + b.name + '</h4>' +
+          '<div class="cmp-rows">' + rows + '</div>' +
+          '<a href="' + b.href + '" class="cmp-cta">View ' + b.name + ' →</a>' +
+        '</div>';
+      }).join('');
+    }
+    function render(){ renderChips(); renderGrid(); }
+    render();
+  }
 })();
