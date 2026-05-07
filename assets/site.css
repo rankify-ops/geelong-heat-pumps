@@ -65,6 +65,8 @@ body.light-hero .dropdown{top:calc(100% + 4px)}
 /* MOBILE DRAWER */
 .mdrawer{position:fixed;inset:0;z-index:150;background:rgba(9,9,11,.94);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);display:flex;flex-direction:column;padding:88px 28px 28px;opacity:0;visibility:hidden;transform:translateY(-12px);transition:all .3s ease;overflow-y:auto}
 .mdrawer.open{opacity:1;visibility:visible;transform:translateY(0)}
+.mdrawer-close{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:1.4rem;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:inherit;transition:all .2s;z-index:151}
+.mdrawer-close:hover,.mdrawer-close:active{background:var(--orange);border-color:var(--orange);transform:scale(1.05)}
 .mdrawer-list{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:28px}
 .mdrawer-list a,.mdrawer-list .mdd-tog{display:block;padding:14px 16px;font-size:1rem;font-weight:700;color:#fff;border-radius:10px;transition:all .2s;background:transparent;border:none;width:100%;text-align:left;cursor:pointer;font-family:inherit}
 .mdrawer-list a:hover,.mdrawer-list a:active,.mdrawer-list .mdd-tog:hover{background:rgba(255,255,255,.08)}

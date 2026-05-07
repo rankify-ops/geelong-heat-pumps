@@ -22,10 +22,23 @@
   var tog = document.querySelector('.mob-tog');
   var drawer = document.querySelector('.mdrawer');
   if(tog && drawer){
+    var closeDrawer = function(){
+      tog.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+    var openDrawer = function(){
+      tog.classList.add('open');
+      drawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
     tog.addEventListener('click', function(){
-      tog.classList.toggle('open');
-      drawer.classList.toggle('open');
-      document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+      if(drawer.classList.contains('open')) closeDrawer(); else openDrawer();
+    });
+    var closeBtn = drawer.querySelector('.mdrawer-close');
+    if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', function(ev){
+      if(ev.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
     });
     drawer.querySelectorAll('a').forEach(function(a){
       a.addEventListener('click', function(){
