@@ -20,10 +20,11 @@ img{max-width:100%;display:block}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;transition:all .3s ease;background:rgba(255,255,255,.06);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px) saturate(1.6);-webkit-backdrop-filter:blur(20px) saturate(1.6);border-bottom:1px solid var(--g200);padding:10px 0;box-shadow:var(--shadow-s)}
 .nav-in{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{display:flex;align-items:center;gap:8px}
-.logo img{height:36px;width:auto;transition:filter .3s}
-.nav .logo img{filter:brightness(0) invert(1)}
-.nav.scrolled .logo img{filter:none}
+.logo{display:flex;align-items:center;gap:8px;position:relative}
+.logo img{height:54px;width:auto;display:block;transition:opacity .3s}
+.logo .logo-dark{position:absolute;inset:0;opacity:0}
+.nav.scrolled .logo .logo-dark{opacity:1}
+.nav.scrolled .logo .logo-light{opacity:0}
 .nav-l{display:flex;align-items:center;gap:28px;list-style:none}
 .nav-l>li{position:relative}
 .nav-l>li>a{font-size:.87rem;font-weight:600;color:rgba(255,255,255,.92);transition:color .2s;display:inline-flex;align-items:center;gap:5px;padding:8px 0}
@@ -398,7 +399,9 @@ textarea.finp{resize:vertical;min-height:90px}
 .foot{background:var(--g900);color:var(--g400);padding:56px 0 24px}
 .foot-g{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
 .foot-brand .logo{margin-bottom:10px}
-.foot-brand .logo img{height:30px;filter:brightness(0) invert(1)}
+.foot-brand .logo img{height:42px;filter:none}
+.foot-brand .logo .logo-dark{display:none}
+.foot-brand .logo .logo-light{position:static;opacity:1}
 .foot-brand p{font-size:.84rem;line-height:1.6;max-width:270px}
 .foot h4{font-size:.78rem;font-weight:700;color:var(--g300);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
 .foot-l{list-style:none;display:flex;flex-direction:column;gap:9px}
@@ -423,6 +426,7 @@ textarea.finp{resize:vertical;min-height:90px}
 /* RESPONSIVE */
 @media(max-width:980px){
   .nav-l,.nav-ph,.nav-cta{display:none}.mob-tog{display:block}
+  .logo img{height:42px}
   .content-g,.reb-g,.form-g,.pdhero-g{grid-template-columns:1fr;gap:32px}
   .content-g.rev{direction:ltr}
   .hero-inner{padding:120px 0 70px}
