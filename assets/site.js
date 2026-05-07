@@ -34,6 +34,16 @@
         document.body.style.overflow='';
       });
     });
+    // Collapsible groups inside the drawer
+    drawer.querySelectorAll('.mdd-tog').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var group = btn.closest('.mdd');
+        var wasOpen = group.classList.contains('open');
+        // Close all groups, then open this one if it wasn't already
+        drawer.querySelectorAll('.mdd').forEach(function(g){ g.classList.remove('open'); });
+        if(!wasOpen) group.classList.add('open');
+      });
+    });
   }
   // Fade-in
   if('IntersectionObserver' in window){
