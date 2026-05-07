@@ -404,8 +404,9 @@ textarea.finp{resize:vertical;min-height:90px}
 .foot-b{padding-top:20px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;font-size:.76rem;flex-wrap:wrap;gap:8px}
 .foot-b a{color:var(--orange)}
 
-/* STICKY mobile floating pill */
-.sticky{position:fixed;bottom:14px;left:14px;right:14px;z-index:99;background:rgba(255,255,255,.55);backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);border:1px solid rgba(255,255,255,.6);padding:10px;display:none;gap:10px;box-shadow:0 8px 32px rgba(232,89,12,.18),0 2px 8px rgba(0,0,0,.08);border-radius:50px}
+/* STICKY mobile floating pill — hidden until past hero */
+.sticky{position:fixed;bottom:14px;left:14px;right:14px;z-index:99;background:rgba(255,255,255,.55);backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);border:1px solid rgba(255,255,255,.6);padding:10px;display:none;gap:10px;box-shadow:0 8px 32px rgba(232,89,12,.18),0 2px 8px rgba(0,0,0,.08);border-radius:50px;opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.sticky.show{opacity:1;transform:translateY(0);pointer-events:auto}
 .sticky a{flex:1 1 0;text-align:center;padding:13px 16px;border-radius:50px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s}
 .sticky .sc{background:rgba(255,255,255,.85);border:1px solid rgba(232,89,12,.2);color:var(--orange-dark)}
 .sticky .sc:active{background:#fff}

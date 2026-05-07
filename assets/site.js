@@ -1,11 +1,22 @@
 // Geelong Heat Pumps shared JS
 (function(){
-  // Nav scroll state
+  // Nav scroll state + sticky pill reveal once past hero
   var nav = document.getElementById('nav');
-  if(nav){
-    var setScrolled = function(){ nav.classList.toggle('scrolled', window.scrollY > 50); };
-    setScrolled();
-    window.addEventListener('scroll', setScrolled, { passive:true });
+  var sticky = document.querySelector('.sticky');
+  var hero = document.querySelector('.hero, .phero, .pdhero');
+  if(nav || sticky){
+    var setState = function(){
+      var y = window.scrollY;
+      if(nav) nav.classList.toggle('scrolled', y > 50);
+      if(sticky){
+        // Show once we've scrolled past most of the hero (or 70vh fallback)
+        var threshold = hero ? hero.offsetTop + hero.offsetHeight - 120 : window.innerHeight * 0.7;
+        sticky.classList.toggle('show', y > threshold);
+      }
+    };
+    setState();
+    window.addEventListener('scroll', setState, { passive:true });
+    window.addEventListener('resize', setState, { passive:true });
   }
   // Mobile drawer
   var tog = document.querySelector('.mob-tog');
