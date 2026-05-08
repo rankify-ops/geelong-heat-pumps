@@ -85,25 +85,7 @@ body.light-hero .dropdown{top:calc(100% + 4px)}
 .hero{padding:0;position:relative;overflow:hidden;display:flex;align-items:center}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(9,9,11,.72) 0%,rgba(9,9,11,.45) 50%,rgba(9,9,11,.25) 100%)}
-
-/* Steam effect */
-.hero-steam{position:absolute;left:0;right:0;bottom:0;height:75%;pointer-events:none;z-index:1;overflow:hidden}
-.steam-puff{position:absolute;bottom:-180px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.5) 0%,rgba(255,255,255,.18) 35%,transparent 65%);filter:blur(28px);opacity:0;mix-blend-mode:screen;animation:steamRise 11s linear infinite}
-.steam-puff:nth-child(1){left:3%;animation-delay:0s;animation-duration:11s;width:240px;height:240px}
-.steam-puff:nth-child(2){left:20%;animation-delay:2.2s;animation-duration:13s;width:300px;height:300px}
-.steam-puff:nth-child(3){left:38%;animation-delay:4.5s;animation-duration:10s;width:260px;height:260px}
-.steam-puff:nth-child(4){left:55%;animation-delay:1s;animation-duration:14s;width:340px;height:340px}
-.steam-puff:nth-child(5){left:72%;animation-delay:6s;animation-duration:12s;width:280px;height:280px}
-.steam-puff:nth-child(6){left:88%;animation-delay:3.5s;animation-duration:13s;width:240px;height:240px}
-@keyframes steamRise{
-  0%{transform:translateY(0) translateX(0) scale(.6);opacity:0}
-  10%{opacity:.55}
-  50%{transform:translateY(-50vh) translateX(40px) scale(1.4);opacity:.4}
-  100%{transform:translateY(-100vh) translateX(-30px) scale(2.2);opacity:0}
-}
-@media(prefers-reduced-motion:reduce){.steam-puff{animation:none;opacity:0}}
-.hero-inner{position:relative;z-index:2;padding:140px 0 80px;width:100%}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(9,9,11,.72) 0%,rgba(9,9,11,.45) 50%,rgba(9,9,11,.25) 100%)}.hero-inner{position:relative;z-index:2;padding:140px 0 80px;width:100%}
 .hero-content{max-width:600px}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);color:#fff;padding:6px 16px;border-radius:50px;font-size:.76rem;font-weight:600;margin-bottom:24px}
 .hero-tag .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;box-shadow:0 0 8px var(--green)}
