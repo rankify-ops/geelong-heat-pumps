@@ -63,6 +63,8 @@ img{max-width:100%;display:block}
 /* Light-hero pages (product detail): nav stays light/dark-text from the start */
 body.light-hero .nav{background:rgba(255,255,255,.92);backdrop-filter:blur(20px) saturate(1.6);-webkit-backdrop-filter:blur(20px) saturate(1.6);border-bottom:1px solid var(--g200);box-shadow:var(--shadow-s)}
 body.light-hero .nav .logo img{filter:none}
+body.light-hero .logo .logo-light{opacity:0}
+body.light-hero .logo .logo-dark{opacity:1}
 body.light-hero .nav-l>li>a{color:var(--g600)}
 body.light-hero .nav-l>li>a:hover{color:var(--g900)}
 body.light-hero .nav-ph{color:var(--g700)}
