@@ -133,7 +133,7 @@
       });
 
       var ctx = qform.dataset.context || 'Quote Request';
-      var to = qform.dataset.to || 'info@geelongheatpumps.com.au';
+      var to = qform.dataset.to || 'tflood@rankify.com.au'; // TEST — switch back to info@geelongheatpumps.com.au when ready
       var subject = 'Website enquiry — ' + ctx;
 
       // Try to find user's email so the client can hit "Reply"
