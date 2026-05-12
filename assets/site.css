@@ -112,7 +112,8 @@ body.light-hero .dropdown{top:calc(100% + 4px)}
 .hero-cards{display:flex;gap:10px;margin-top:36px}
 .hero-glass{flex:1;padding:14px 18px;background:rgba(255,255,255,.1);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border:1px solid rgba(255,255,255,.15);border-radius:var(--rs);display:flex;align-items:center;gap:10px;transition:all .3s;cursor:default}
 .hero-glass:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
-.hero-glass .hg-icon{font-size:1.3rem}
+.hero-glass .hg-icon{font-size:1.3rem;display:flex;align-items:center;justify-content:center;color:#fff;width:28px;height:28px;flex-shrink:0}
+.hero-glass .hg-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .hero-glass .hg-val{font-size:1.15rem;font-weight:800;color:#fff;line-height:1}
 .hero-glass .hg-label{font-size:.65rem;color:rgba(255,255,255,.6);font-weight:500}
 .hero-guarantee{position:absolute;bottom:40px;right:40px;z-index:1}
@@ -141,7 +142,8 @@ body.light-hero .dropdown{top:calc(100% + 4px)}
 .ben-item{padding:28px 24px;text-align:center;transition:all .3s;cursor:default}
 .ben-item:hover{background:var(--g50)}
 .ben-item:hover .ben-ico{transform:translateY(-3px)}
-.ben-ico{width:48px;height:48px;margin:0 auto 12px;background:var(--orange-light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.ben-ico{width:48px;height:48px;margin:0 auto 12px;background:var(--orange-light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;transition:transform .3s cubic-bezier(.4,0,.2,1);color:var(--orange)}
+.ben-ico svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .ben-item h4{font-size:.88rem;font-weight:700;margin-bottom:4px;color:var(--g900)}
 .ben-item p{font-size:.78rem;color:var(--g500);line-height:1.5}
 
@@ -225,7 +227,8 @@ body.light-hero .dropdown{top:calc(100% + 4px)}
 .why-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}
 .wcard{padding:28px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r);display:flex;gap:16px;transition:all .3s}
 .wcard:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
-.wico{width:44px;height:44px;min-width:44px;background:rgba(235,65,15,.12);border:1px solid rgba(235,65,15,.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.wico{width:44px;height:44px;min-width:44px;background:rgba(235,65,15,.14);border:1px solid rgba(235,65,15,.22);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--orange)}
+.wico svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .wcard h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:3px}
 .wcard p{font-size:.86rem;color:var(--g400);line-height:1.6}
 
