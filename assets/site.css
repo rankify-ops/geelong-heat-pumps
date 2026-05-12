@@ -372,6 +372,10 @@ textarea.finp{resize:vertical;min-height:90px}
 .pdq .k{font-size:.7rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--g400);font-weight:700;margin-bottom:4px}
 .pdq .v{font-weight:800;color:var(--g900);font-size:.98rem}
 .pd-btns{display:flex;gap:10px;flex-wrap:wrap}
+.pd-downloads{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;font-size:.85rem}
+.pd-download{display:inline-flex;align-items:center;gap:6px;color:var(--g600);font-weight:600;transition:color .2s;border-bottom:1px solid var(--g200);padding-bottom:2px}
+.pd-download:hover{color:var(--orange);border-color:var(--orange)}
+.pd-download svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
 /* SPEC TABLE */
 .spec-tbl{width:100%;border-collapse:collapse;margin-top:24px;background:var(--white);border-radius:var(--r);overflow:hidden;border:1px solid var(--g200)}
