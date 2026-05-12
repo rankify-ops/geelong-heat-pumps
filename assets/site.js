@@ -101,6 +101,10 @@
         var slide = b.closest('.fslide');
         var key = slide.dataset.field || ('Question ' + slide.dataset.s);
         fd[key] = b.dataset.v;
+        // Auto-advance after a short delay so the user sees their selection
+        setTimeout(function(){
+          if(cs < maxStep){ cs++; upd(); }
+        }, 350);
       });
     });
     var showSuccess = function(){
@@ -278,6 +282,16 @@
         ['Warranty','7–10 yr (controller)'],
         ['Made in','Australia'],
         ['Best for','Larger / solar homes'],
+      ] },
+      evoheat: { name:'Evo Heat', tier:'Hot Water & Pool · $$$', img:'images/product-evoheat.png', href:'evoheat.html', specs:[
+        ['Capacity','270L'],
+        ['Refrigerant','R290 Natural'],
+        ['Configuration','All-in-one'],
+        ['Use','Hot water + Pool'],
+        ['Smart control','Inverter'],
+        ['Warranty','5 Years'],
+        ['Made in','Imported'],
+        ['Best for','Households + pool owners'],
       ] },
     };
     var DEFAULT = ['emerald','istore','reclaim'];
