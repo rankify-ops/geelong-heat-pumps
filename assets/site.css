@@ -297,7 +297,9 @@ body.light-hero .dropdown{top:calc(100% + 4px)}
 .ob{padding:15px 12px;background:var(--white);border:1.5px solid var(--g200);border-radius:var(--rxs);cursor:pointer;transition:all .2s;text-align:center;font-family:inherit;color:var(--g700)}
 .ob:hover{border-color:var(--g300);background:var(--g50)}
 .ob.sel{border-color:var(--orange);background:var(--orange-light);color:var(--orange)}
-.oico{font-size:1.3rem;margin-bottom:3px}
+.oico{font-size:1.3rem;margin-bottom:6px;display:flex;align-items:center;justify-content:center;height:30px}
+.oico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.cinfo-ico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .olbl{font-size:.8rem;font-weight:600}
 .finp{width:100%;padding:13px 15px;background:var(--white);border:1.5px solid var(--g200);border-radius:var(--rxs);font-family:inherit;font-size:.9rem;color:var(--g800);outline:none;transition:all .2s;margin-bottom:8px}
 .finp:focus{border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-glow)}
