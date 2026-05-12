@@ -222,17 +222,17 @@ body.light-hero .dropdown{top:calc(100% + 4px)}
 .pcard.feat .pcta:hover{background:var(--orange-dark)}
 
 /* WHY */
-.why-sec{background:var(--g900);color:#fff;border-top:3px solid var(--orange)}
+.why-sec{background:var(--g50);color:var(--g800);border-top:3px solid var(--orange);border-bottom:1px solid var(--g200)}
 .why-sec .sec-tag{color:var(--orange)}
-.why-sec .sec-t{color:#fff}
-.why-sec .sec-sub{color:var(--g400)}
+.why-sec .sec-t{color:var(--g900)}
+.why-sec .sec-sub{color:var(--g500)}
 .why-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}
-.wcard{padding:28px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--r);display:flex;gap:16px;transition:all .3s}
-.wcard:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
-.wico{width:44px;height:44px;min-width:44px;background:rgba(235,65,15,.14);border:1px solid rgba(235,65,15,.22);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--orange)}
+.wcard{padding:28px;background:var(--white);border:1px solid var(--g200);border-radius:var(--r);display:flex;gap:16px;transition:all .3s;box-shadow:var(--shadow-xs)}
+.wcard:hover{border-color:var(--orange);box-shadow:var(--shadow-l);transform:translateY(-2px)}
+.wico{width:44px;height:44px;min-width:44px;background:var(--orange-light);border:1px solid rgba(235,65,15,.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--orange)}
 .wico svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
-.wcard h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:3px}
-.wcard p{font-size:.86rem;color:var(--g400);line-height:1.6}
+.wcard h4{font-size:1rem;font-weight:700;color:var(--g900);margin-bottom:3px}
+.wcard p{font-size:.86rem;color:var(--g600);line-height:1.6}
 
 /* REVIEWS */
 .rev-sec{padding:96px 0;overflow:hidden}
@@ -430,26 +430,28 @@ textarea.finp{resize:vertical;min-height:90px}
 }
 
 /* CTA STRIP (cross-page) */
-.cta-strip{padding:64px 0;background:linear-gradient(135deg,var(--g950),var(--g800));color:#fff;text-align:center;position:relative;overflow:hidden}
-.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(235,65,15,.15) 0%,transparent 50%)}
+.cta-strip{padding:64px 0;background:linear-gradient(135deg,var(--orange-light),var(--orange-50));color:var(--g800);text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(235,65,15,.12);border-bottom:1px solid rgba(235,65,15,.12)}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 50%,rgba(235,65,15,.08) 0%,transparent 55%)}
 .cta-strip>.ctr{position:relative;z-index:1}
-.cta-strip h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);margin-bottom:10px;font-weight:800}
-.cta-strip p{color:rgba(255,255,255,.7);max-width:560px;margin:0 auto 26px;line-height:1.7;font-size:.97rem}
+.cta-strip h2{color:var(--g900);font-size:clamp(1.6rem,2.8vw,2.2rem);margin-bottom:10px;font-weight:800}
+.cta-strip p{color:var(--g600);max-width:560px;margin:0 auto 26px;line-height:1.7;font-size:.97rem}
 .cta-strip-btns{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.cta-strip-btns .btn-glass{background:var(--white);color:var(--g800);border-color:var(--g200)}
+.cta-strip-btns .btn-glass:hover{background:var(--g50);border-color:var(--g300)}
 
 /* FOOTER */
-.foot{background:var(--g900);color:var(--g400);padding:56px 0 24px}
+.foot{background:var(--g50);color:var(--g600);padding:56px 0 24px;border-top:1px solid var(--g200)}
 .foot-g{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
 .foot-brand .logo{margin-bottom:10px}
 .foot-brand .logo img{height:42px;filter:none}
-.foot-brand .logo .logo-dark{display:none}
-.foot-brand .logo .logo-light{position:static;opacity:1}
-.foot-brand p{font-size:.84rem;line-height:1.6;max-width:270px}
-.foot h4{font-size:.78rem;font-weight:700;color:var(--g300);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+.foot-brand .logo .logo-light{display:none}
+.foot-brand .logo .logo-dark{position:static;opacity:1}
+.foot-brand p{font-size:.84rem;line-height:1.6;max-width:270px;color:var(--g600)}
+.foot h4{font-size:.78rem;font-weight:700;color:var(--g900);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
 .foot-l{list-style:none;display:flex;flex-direction:column;gap:9px}
-.foot-l a{font-size:.84rem;transition:color .2s}
-.foot-l a:hover{color:#fff}
-.foot-b{padding-top:20px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;font-size:.76rem;flex-wrap:wrap;gap:8px}
+.foot-l a{font-size:.84rem;transition:color .2s;color:var(--g600)}
+.foot-l a:hover{color:var(--orange)}
+.foot-b{padding-top:20px;border-top:1px solid var(--g200);display:flex;justify-content:space-between;font-size:.76rem;flex-wrap:wrap;gap:8px;color:var(--g500)}
 .foot-b a{color:var(--orange)}
 
 /* STICKY mobile floating pill — hidden until past hero */
