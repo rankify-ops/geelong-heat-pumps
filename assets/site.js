@@ -101,6 +101,12 @@
         var slide = b.closest('.fslide');
         var key = slide.dataset.field || ('Question ' + slide.dataset.s);
         fd[key] = b.dataset.v;
+        // Dynamic context: if this form is configured to derive context from
+        // a specific field (e.g. "Service" on the services page), update it.
+        var ctxFrom = qform.dataset.contextFrom;
+        if(ctxFrom && key === ctxFrom){
+          qform.dataset.context = b.dataset.v;
+        }
         // Auto-advance after a short delay so the user sees their selection
         setTimeout(function(){
           if(cs < maxStep){ cs++; upd(); }

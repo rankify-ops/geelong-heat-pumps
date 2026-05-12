@@ -170,8 +170,10 @@ body.light-hero .dropdown{top:calc(100% + 4px)}
 
 /* FEATURE GRID (3 col cards) */
 .fg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
-.fg-card{background:var(--white);border:1.5px solid var(--g200);border-radius:var(--r);padding:30px 26px;transition:all .3s}
+.fg-card{background:var(--white);border:1.5px solid var(--g200);border-radius:var(--r);padding:30px 26px;transition:all .3s;display:block;color:inherit;text-decoration:none}
 .fg-card:hover{transform:translateY(-3px);border-color:var(--orange);box-shadow:var(--shadow-l)}
+.fg-card .fg-link{display:inline-block;margin-top:14px;color:var(--orange);font-weight:700;font-size:.86rem;transition:transform .25s}
+.fg-card:hover .fg-link{transform:translateX(4px)}
 .fg-ico{width:52px;height:52px;background:var(--orange-light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;color:var(--orange)}
 .fg-ico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .fg-card h4{font-size:1.1rem;margin-bottom:6px}
