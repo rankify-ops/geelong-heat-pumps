@@ -169,6 +169,7 @@
         'Shop 4, 21-23 Gregory Ave, Newtown VIC 3220';
 
       var payload = {
+        access_key: '89671b92-bfdd-4586-b733-2ecb098b5b35',
         _subject: subject,
         _captcha: 'false',
         _template: 'table',
@@ -186,7 +187,7 @@
       var origText = btn ? btn.textContent : '';
       if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; btn.style.opacity = '.7'; }
 
-      var endpoint = 'https://formsubmit.co/ajax/' + encodeURIComponent(to);
+      var endpoint = 'https://api.web3forms.com/submit';
 
       fetch(endpoint, {
         method: 'POST',
