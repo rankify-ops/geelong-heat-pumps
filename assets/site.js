@@ -144,7 +144,6 @@
 
       var ctx = qform.dataset.context || 'Quote Request';
       var to = qform.dataset.to || 'info@geelongheatpumps.com.au';
-      var subject = 'Website enquiry — ' + ctx;
 
       // Try to find user's email so the client can hit "Reply"
       var userEmail = '';
@@ -159,6 +158,11 @@
       Object.keys(fd).forEach(function(k){ if(/name/i.test(k) && !userName) userName = fd[k]; });
       var firstName = (userName.split(' ')[0] || 'there');
 
+      // Subject leads with the customer name so the inbox is searchable.
+      var subject = 'Website enquiry'
+        + (userName ? ' — ' + userName : '')
+        + ' — ' + ctx;
+
       var autoResponse =
         'Hi ' + firstName + ',\n\n' +
         'Thanks for your enquiry about ' + ctx + ' — we\'ve received it and will be in touch with your personalised quote and full rebate breakdown.\n\n' +
@@ -168,16 +172,37 @@
         '0411 375 484 | info@geelongheatpumps.com.au\n' +
         'Shop 4, 21-23 Gregory Ave, Newtown VIC 3220';
 
+      // Split collected form data into customer-contact fields vs. qualifying
+      // questions, so customer details land at the top of the email.
+      var customerRx = /name|phone|mobile|email|suburb|postcode|address/i;
+      var customerOrder = ['name','phone','mobile','email','suburb','postcode','address'];
+      var customer = {}, other = {};
+      Object.keys(fd).forEach(function(k){
+        if(customerRx.test(k)) customer[k] = fd[k]; else other[k] = fd[k];
+      });
+      var customerSorted = {};
+      customerOrder.forEach(function(want){
+        Object.keys(customer).forEach(function(k){
+          if(new RegExp(want,'i').test(k) && !(k in customerSorted)) customerSorted[k] = customer[k];
+        });
+      });
+      Object.keys(customer).forEach(function(k){
+        if(!(k in customerSorted)) customerSorted[k] = customer[k];
+      });
+
       var payload = {
         access_key: 'e6f497d6-d756-4bb9-9ece-8250406b5bae',
         cc: 'tflood@rankify.com.au',
         subject: subject,
         replyto: userEmail || '',
-        email: userEmail || '',
-        Service: ctx,
-        'Source Page': window.location.href
+        email: userEmail || ''
       };
-      Object.keys(fd).forEach(function(k){ payload[k] = fd[k]; });
+      // Customer details first — what the client wants at the top of the email.
+      Object.keys(customerSorted).forEach(function(k){ payload[k] = customerSorted[k]; });
+      // Then service context and qualifying answers.
+      payload['Service'] = ctx;
+      payload['Source Page'] = window.location.href;
+      Object.keys(other).forEach(function(k){ payload[k] = other[k]; });
 
       var btn = submitBtn();
       var origText = btn ? btn.textContent : '';
