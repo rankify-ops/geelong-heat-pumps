@@ -170,7 +170,7 @@
         'Cheers,\n' +
         'The Geelong Heat Pumps Team\n' +
         '0411 375 484 | info@geelongheatpumps.com.au\n' +
-        'Shop 4, 21-23 Gregory Ave, Newtown VIC 3220';
+        '22/7-21 Newcastle Street, Newtown VIC 3220';
 
       // Split collected form data into customer-contact fields vs. qualifying
       // questions, so customer details land at the top of the email.
